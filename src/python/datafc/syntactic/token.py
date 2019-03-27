@@ -33,17 +33,19 @@ class TokenData:
         self.length: int = length
         self.values = values
 
+    def __hash__(self):
+        return hash(self.token_type) + hash(self.position) + hash(self.length)
+
     def __str__(self):
         return f"TokenData({self.token_type.name}, {self.position}, {self.length})"
 
     def __eq__(self, token_data: 'TokenData') -> bool:
-        if self.token_type == token_data.token_type and self.position == token_data.position \
-                and self.length == token_data.length:
+        if self.token_type == token_data.token_type and self.length == token_data.length:
             return True
         return False
 
     def is_matched(self, token_data: 'TokenData') -> bool:
-        return self.token_type == token_data.token_type and self.position == token_data.position
+        return self.token_type == token_data.token_type
 
     def combine(self, token_data: 'TokenData') -> Optional['TokenData']:
         if self.is_matched(token_data):
@@ -152,7 +154,7 @@ class RegexType(TokenType, metaclass=ABCMeta):
     @staticmethod
     def find_all_tokens_of_type(token_type: 'RegexType', string: str) -> List[Tuple[int, int, TokenData]]:
         return [(match.start(), match.end(),
-                 TokenData(token_type, -1, match.end() - match.start(), [match.group(0)]))
+                 TokenData(token_type, index, match.end() - match.start(), [match.group(0)]))
                 for index, match in enumerate(re.finditer(token_type.regex, string))]
 
     @staticmethod
@@ -183,6 +185,7 @@ Alnumspace = RegexType("Alnumspace", r"[\p{L}\p{N}\p{Z}]+")
 Alphabet = RegexType("Alphabet", r"\p{L}+", [Alphanum])
 Uppercase = RegexType("Uppercase", r"\p{Lu}+", [Alphabet])
 Lowercase = RegexType("Lowercase", r"\p{Ll}+", [Alphabet])
+# Digit = RegexType("Digit", r"((?<![\.\p{N}+])\p{N}+\.\p{N}+(?![.\p{N}]))|(\p{N}+)", [Alphanum])
 Digit = RegexType("Digit", r"\p{N}+", [Alphanum])
 Whitespace = RegexType("Whitespace", r"\p{Z}+")
 Punctuation = RegexType("Punctuation", r"[\p{P}\p{S}]+")

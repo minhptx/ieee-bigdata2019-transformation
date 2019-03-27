@@ -115,7 +115,8 @@ class PatternTree:
         return reduce(list.__add__, self.node_in_layers, [])
 
     def get_patterns_by_layers(self, layers):
-        return reduce(list.__add__, [self.node_in_layers[layer] for layer in layers], [])
+        return [pattern_node.value for pattern_node in
+                reduce(list.__add__, [self.node_in_layers[layer] for layer in layers], [])]
 
     @staticmethod
     def build_from_strings(str_values: List[str]) -> 'PatternTree':

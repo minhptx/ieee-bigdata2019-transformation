@@ -1,4 +1,5 @@
 import logging
+import uuid
 from enum import Enum
 from pathlib import Path
 from typing import List, Dict, Union
@@ -14,7 +15,11 @@ class DataType(Enum):
 
 
 class Column:
-    def __init__(self, name: str, semantic_type: str, values=None):
+    def __init__(self, name: str = None, semantic_type: str = None, values=None):
+        if name is None:
+            name = str(uuid.uuid4())
+        if semantic_type is None:
+            semantic_type = name
         if values is None:
             values = []
         self.name: str = name

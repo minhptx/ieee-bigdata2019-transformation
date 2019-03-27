@@ -5,12 +5,14 @@ from joblib import dump, load
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
+from datafc.ml.classification.base import BaseClassifier
+
 T = TypeVar('T')
 
 DUMMY_STR = "|#$%^&"
 
 
-class MultiBinary(Generic[T]):
+class MultiBinary(BaseClassifier[T]):
     def __init__(self, sim_func: Callable[[T, T], List[float]], method: str = "lr"):
         self.labeled_data: List[Tuple[str, T]] = []
         if method == 'random_forest':

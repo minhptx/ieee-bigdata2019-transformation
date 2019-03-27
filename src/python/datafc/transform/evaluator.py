@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List, Dict, Tuple
 
 from datafc.syntactic.pattern import PatternTree
-from datafc.transform.models.pattern import PatternTransformationModel
+from datafc.transform.pattern_mapping.model import PatternMappingModel
 from datafc.transform.validation import Validator
 
 
@@ -54,8 +54,10 @@ class Evaluator:
         original_tree = PatternTree.build_from_strings(original_values)
         print("Built from original values")
 
-        transformation_model = PatternTransformationModel(original_tree, transformed_tree, transformed_values)
-        original_to_target_strings, scores = transformation_model.learn_and_transform_between_trees()
+        transformation_model = PatternMappingModel(original_tree, transformed_tree, transformed_values)
+        original_to_target_strings, scores = transformation_model.learn()
+
+        print(original_to_target_strings, scores)
 
         Path("debug").mkdir(parents=True, exist_ok=True)
 
@@ -77,7 +79,6 @@ class Evaluator:
                 self.name_to_total_count[name] += 1
                 result = False
 
-                # print(original_value, original_to_groundtruth)
                 if transformed_value == original_to_groundtruth[original_value]:
                     result = True
                     self.name_to_true_count[name] += 1

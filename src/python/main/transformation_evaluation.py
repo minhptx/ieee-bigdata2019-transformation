@@ -3,7 +3,10 @@ from pathlib import Path
 from typing import List, Dict
 import time
 
-from datafc.transform.evaluation import Evaluator
+from datafc.transform.evaluator import Evaluator
+from datafc.utils.logging import setup_logging
+
+setup_logging("conf/logging.yaml")
 
 dataset = "ijcai"
 name_to_original_values: Dict[str, List[str]] = collections.defaultdict(list)
@@ -15,7 +18,7 @@ name_to_time: Dict[str, float] = {}
 
 evaluator = Evaluator()
 for sub_folder in list((Path("data") / f"{dataset}").iterdir()):
-    if sub_folder.name not in ["1st_dimension"]:
+    if sub_folder.name not in ["bd2"]:
         continue
     print("File: ", sub_folder.name)
     for file in sub_folder.iterdir():
