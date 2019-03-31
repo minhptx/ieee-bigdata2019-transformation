@@ -9,7 +9,7 @@ def convert_new_structure(folder_path):
 
     if not (path / "groundtruth").exists() or not (path / "input" / "raw").exists() or not (
             path / "input" / "transformed"):
-        print('Wrong folder structure')
+        logger.error('Wrong folder structure')
         return False
 
     for groundtruth_path in (path / "groundtruth").iterdir():

@@ -59,7 +59,6 @@ class TokenData:
         masked_data: List['TokenData'] = [TokenData(StartToken, -1, -1, [""])]
         while string:
             for regex_type in BASIC_TYPES:
-                # print(regex_type.regex, str)
                 match_result = re.match("^" + regex_type.regex, string)
                 if match_result:
                     masked_data.append(TokenData(regex_type, -1, len(match_result.group()), [match_result.group()]))
@@ -85,7 +84,6 @@ class TokenData:
         masked_data: List['TokenData'] = [TokenData(StartToken, -1, -1, [""])]
         while string:
             for regex_type in REGEX_TYPES:
-                # print(regex_type.regex, str)
                 match_result = re.match("^" + regex_type.regex, string)
                 if match_result:
                     masked_data.append(TokenData(regex_type, -1, len(match_result.group()), [match_result.group()]))
@@ -196,30 +194,3 @@ REGEX_TYPES = [Alphanum, Alphabet, Uppercase, Lowercase, Digit, Whitespace, Punc
 StartToken = Special("^")
 EndToken = Special("$")
 ATOMIC_TYPES = [Uppercase, Lowercase, Digit, Whitespace]
-
-# class Constant(TokenType):
-#     def __init__(self, string: str):
-#         self.value = string
-#
-#     @property
-#     def name(self) -> str:
-#         return f"Constant{self.value}"
-#
-#     @property
-#     def regex(self) -> str:
-#         return re.escape(self.value)
-#
-#     @property
-#     def super_types(self) -> List['TokenType']:
-#         return list()
-#
-#     @staticmethod
-#     def find_all_matches(string: str, maximum_length: int) -> List[Tuple[int, int, TokenData]]:
-#         matches = []
-#         substr_to_pos = collections.defaultdict(lambda: 0)
-#         for length in range(1, maximum_length + 1):
-#             for i in range(len(string) - length):
-#                 substring = string[i: i + length]
-#                 substr_to_pos[substring] += 1
-#                 matches.append((i, i + length, TokenData(Constant(substring), substr_to_pos[substring], length)))
-#         return matches

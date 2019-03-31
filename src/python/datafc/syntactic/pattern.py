@@ -9,7 +9,6 @@ class Pattern:
     def __init__(self, token_sequence: List[TokenData], level=0):
         self.tokens: List[TokenData] = token_sequence
         self.level = level
-        # print(len(self.tokens[0].values))
         self.values = ["" for _ in range(len(self.tokens[0].values))]
 
         for token in self.tokens:
@@ -77,10 +76,8 @@ class Pattern:
         idx = 0
         removed_indices = []
         while idx < len(tokens):
-            # print("Idx ", idx)
             run_idx = idx + 1
             while run_idx < len(tokens):
-                # print("Run idx", run_idx)
                 if tokens[run_idx].token_type == tokens[idx].token_type:
                     tokens[idx].values = [value + tokens[run_idx].values[i]
                                           for i, value in enumerate(tokens[idx].values)]
@@ -108,19 +105,22 @@ class PatternNode:
 
 
 class PatternTree:
-    def __init__(self):
+    def __init__(self, values: List[str]):
         self.node_in_layers: List[List[PatternNode]] = [[] for _ in range(0, 5)]
+        self.values = values
 
     def get_all_patterns(self):
         return reduce(list.__add__, self.node_in_layers, [])
 
-    def get_patterns_by_layers(self, layers):
+    def get_patterns_by_layers(self, layers, in_groups=False):
+        if in_groups:
+            return [[node.value for node in self.node_in_layers[layer]] for layer in layers]
         return [pattern_node.value for pattern_node in
                 reduce(list.__add__, [self.node_in_layers[layer] for layer in layers], [])]
 
     @staticmethod
     def build_from_strings(str_values: List[str]) -> 'PatternTree':
-        pattern_tree = PatternTree()
+        pattern_tree = PatternTree(str_values)
         pattern_to_node: Dict[str, PatternNode] = {}
 
         for str_value in str_values:
@@ -135,7 +135,6 @@ class PatternTree:
             for pattern_node in pattern_tree.node_in_layers[i - 1]:
                 parent_pattern = pattern_node.value.level_up()
 
-                # print("Level", i, pattern_node.value.level, parent_pattern.level)
                 if parent_pattern is None:
                     continue
                 if str(parent_pattern) in pattern_to_node:

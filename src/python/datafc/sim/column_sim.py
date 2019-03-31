@@ -30,18 +30,15 @@ def text_jaccard(col1: Column, col2: Column) -> float:
     return jaccard(col1_array, col2_array)
 
 
-def ngram_jaccard(col1: Column, col2: Column) -> float:
-    n_grams1 = [x for value in col1.values for x in create_ngrams(value, 2)]
-    n_grams2 = [x for value in col2.values for x in create_ngrams(value, 2)]
+def ngram_jaccard(col1: Column, col2: Column, n: int) -> float:
+    n_grams1 = [x for value in col1.values for x in create_ngrams(value, n)]
+    n_grams2 = [x for value in col2.values for x in create_ngrams(value, n)]
 
     return jaccard(n_grams1, n_grams2)
 
 
 def values_jaccard(col1: Column, col2: Column) -> float:
-    col1_array = np.array(col1.values)
-    col2_array = np.array(col2.values)
-
-    return jaccard(col1_array, col2_array)
+    return jaccard(col1.values, col2.values)
 
 
 def numeric_ks(col1: Column, col2: Column) -> float:
@@ -78,6 +75,20 @@ def syntactic_sim(col1: Column, col2: Column) -> float:
     return jaccard(token_lists1, token_lists2)
 
 
+def length_syntactic_sim(col1: Column, col2: Column) -> float:
+    token_lists1 = []
+    for str_value in col1.values:
+        token_lists1.append(" ".join(["%s(%s)" % (x.token_type.name, x.length) for x in
+                                      TokenData.get_basic_pattern(str_value)]))
+
+    token_lists2 = []
+    for str_value in col2.values:
+        token_lists2.append(" ".join(["%s(%s)" % (x.token_type.name, x.length) for x in
+                                      TokenData.get_basic_pattern(str_value)]))
+
+    return jaccard(token_lists1, token_lists2)
+
+
 def syntactic_ratio(col1: Column, col2: Column) -> float:
     tokens1: set = set(TokenData.get_basic_tokens(col1.values[0]))
     tokens2: set = set(TokenData.get_basic_tokens((col2.values[0])))
@@ -89,12 +100,3 @@ def syntactic_ratio(col1: Column, col2: Column) -> float:
         tokens2 = set(tokens2).intersection(set(TokenData.get_basic_tokens(str_value)))
 
     return len(tokens1.intersection(tokens2)) * 1.0 / len(tokens1.union(tokens2))
-
-
-def word2vec_sim(col1: Column, col2: Column):
-    col1_matrix = [x.split() for x in col1.values]
-    col2_matrix = [x.split() for x in col2.values]
-
-    # col1_w2v_matrix = word2vec.query(col1_matrix)
-    # col2_w2v_matrix = word2vec.query(col2_matrix)
-    return 0

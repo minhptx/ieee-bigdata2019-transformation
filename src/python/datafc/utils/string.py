@@ -5,19 +5,23 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 def jaccard(x, y):
-    try:
+    if x and y:
         return np.intersect1d(x, y).size / np.union1d(x, y).size
-    except Exception:
-        return 0
+    return 0
 
 
 def cosine(x: str, y: str):
     vectorizer = CountVectorizer()
     try:
         vectors = vectorizer.fit_transform([x, y]).toarray()
-    except Exception as _:
+    except Exception as e:
+        logger.error(e)
         return 0
     return cosine_similarity(vectors[0:1], vectors[1:2])[0][0]
 

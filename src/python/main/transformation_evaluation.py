@@ -1,14 +1,16 @@
 import collections
+import logging
 from pathlib import Path
 from typing import List, Dict
-import time
 
-from datafc.transform.evaluator import Evaluator
+from datafc.transform.evaluation import Evaluator
 from datafc.utils.logging import setup_logging
 
 setup_logging("conf/logging.yaml")
 
-dataset = "ijcai"
+logger = logging.getLogger(__name__)
+
+dataset = "sygus"
 name_to_original_values: Dict[str, List[str]] = collections.defaultdict(list)
 name_to_target_values: Dict[str, List[str]] = collections.defaultdict(list)
 name_to_groundtruth_values: Dict[str, List[str]] = collections.defaultdict(list)
@@ -18,9 +20,9 @@ name_to_time: Dict[str, float] = {}
 
 evaluator = Evaluator()
 for sub_folder in list((Path("data") / f"{dataset}").iterdir()):
-    if sub_folder.name not in ["bd2"]:
-        continue
-    print("File: ", sub_folder.name)
+    # if sub_folder.name not in ["lastname-long"]:
+    #     continue
+    logger.info("Scenario: %s" % sub_folder.name)
     for file in sub_folder.iterdir():
         with file.open(encoding="utf-8") as reader:
 
@@ -35,17 +37,10 @@ for sub_folder in list((Path("data") / f"{dataset}").iterdir()):
 
             length = len(name_to_original_values[file.name])
 
-    save_time = time.time()
-    result = evaluator.calculate_tree_result(sub_folder.name, name_to_original_values[sub_folder.name][:1000],
-                                             name_to_target_values[sub_folder.name][:1000],
-                                             name_to_groundtruth_values[sub_folder.name][:1000])
+    evaluator.run_top_k_experiment(sub_folder.name, name_to_original_values[sub_folder.name][:1000],
+                                   name_to_target_values[sub_folder.name][:1000],
+                                   name_to_groundtruth_values[sub_folder.name][:1000], 5)
 
-    name_to_result[sub_folder.name] = result[2]
-    name_to_time[sub_folder.name] = time.time() - save_time
+    evaluator.report_file(sub_folder.name)
 
-    print(name_to_result)
-    print(name_to_time)
-    print(sum(name_to_result.values()) / len(name_to_result))
-    print(sum(name_to_time.values()) / len(name_to_result))
-
-    print("Validation accuracy", evaluator.validation_accuracy())
+evaluator.report_dataset()

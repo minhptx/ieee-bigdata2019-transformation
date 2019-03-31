@@ -43,8 +43,6 @@ class Substring(Operation):
             params_list.append((i, target_length))
             params_list.append((-i - target_length, target_length))
 
-            # print("Score ", i, value_list[:3], self.target_values[:3], score_dict[i])
-
         return params_list
 
     def transform(self) -> List[str]:
@@ -109,8 +107,6 @@ class Replace(Operation):
     @staticmethod
     def generate(original_token: TokenData, target_token: TokenData) -> List['Operation']:
         if target_token.token_type == original_token.token_type:
-            # print(set([len(x) for x in target_token.values]))
-            # print(set([len(x) for x in original_token.values]))
             if len(set([len(x) for x in target_token.values]).intersection(
                     set([len(x) for x in original_token.values]))) != 0:
                 return [Replace(original_token, target_token)]
@@ -129,7 +125,6 @@ class Constant(Operation):
 
     @staticmethod
     def generate(original_token: TokenData, target_token: TokenData) -> List['Operation']:
-        # print("Constant Token ", original_values[:5], len(set(target_values)) == 1)
         if len(set(target_token.values)) == 1 and len(target_token.values) != 1:
             return [Constant(original_token, target_token)]
         return []

@@ -6,7 +6,7 @@ from typing import List, Dict, Union
 
 import pandas as pd
 
-log = logging.getLogger("column")
+logger = logging.getLogger("column")
 
 
 class DataType(Enum):
@@ -58,11 +58,9 @@ class Column:
                 self._textual_values.append(value)
 
     def add_value(self, value: str):
-        log.debug(f"Adding value {value}")
         self.values.append(value)
 
     def extend_values(self, values: List[str]):
-        log.debug(f"Adding values {' '.join(values)}")
         self.values.extend(values)
 
     def is_unique(self) -> bool:
