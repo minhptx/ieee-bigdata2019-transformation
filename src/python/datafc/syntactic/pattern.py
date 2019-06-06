@@ -1,5 +1,9 @@
 from functools import reduce
+from functools import reduce
 from typing import List, Dict, Optional
+
+import numpy as np
+import regex as re
 
 from datafc.repr.column import Column
 from datafc.syntactic.token import TokenData, Uppercase, Lowercase, Alphabet, Digit, Alphanum, Whitespace, Alnumspace
@@ -11,14 +15,19 @@ class Pattern:
         self.level = level
         self.values = ["" for _ in range(len(self.tokens[0].values))]
 
+        self.regex = "".join([token.token_type.regex for token in self.tokens])
+
         for token in self.tokens:
             for idx in range(len(token.values)):
                 self.values[idx] += token.values[idx]
 
-    def __str__(self):
-        return " ".join([str(token) for token in self.tokens])
+    def __repr__(self):
+        return f"Pattern({''.join([str(token) for token in self.tokens])}, level={self.level})"
 
-    def __eq__(self, pattern: 'Pattern') -> bool:
+    def __hash__(self):
+        return hash(self.__repr__())
+
+    def __eq__(self, pattern: "Pattern") -> bool:
         if len(self.tokens) != len(pattern.tokens):
             return False
         for idx in range(len(self.tokens)):
@@ -26,13 +35,18 @@ class Pattern:
                 return False
         return True
 
-    def combine(self, pattern: 'Pattern') -> 'Pattern':
+    def combine(self, pattern: "Pattern") -> "Pattern":
         assert self == pattern
         new_tokens = []
         for idx, token in enumerate(self.tokens):
             new_tokens.append(token.combine(pattern.tokens[idx]))
 
         return Pattern(new_tokens, self.level)
+
+    def match(self, value_str: str) -> bool:
+        if re.fullmatch(self.regex, value_str):
+            return True
+        return False
 
     def to_cols(self):
         columns = []
@@ -43,16 +57,13 @@ class Pattern:
 
         return columns
 
-    def __hash__(self):
-        return hash("".join([str(token) for token in self.tokens]))
-
     @staticmethod
-    def build_from_string(string: str) -> 'Pattern':
+    def build_from_string(string: str) -> "Pattern":
         tokens = TokenData.get_basic_pattern(string)
 
         return Pattern(tokens)
 
-    def level_up(self) -> Optional['Pattern']:
+    def level_up(self) -> Optional["Pattern"]:
         tokens: List[Optional[TokenData]] = [None] * len(self.tokens)
         for idx, token in enumerate(self.tokens):
             if self.level == 0:
@@ -79,8 +90,9 @@ class Pattern:
             run_idx = idx + 1
             while run_idx < len(tokens):
                 if tokens[run_idx].token_type == tokens[idx].token_type:
-                    tokens[idx].values = [value + tokens[run_idx].values[i]
-                                          for i, value in enumerate(tokens[idx].values)]
+                    tokens[idx].values = [
+                        value + tokens[run_idx].values[i] for i, value in enumerate(tokens[idx].values)
+                    ]
                     removed_indices.append(run_idx)
                     run_idx += 1
                 else:
@@ -96,17 +108,21 @@ class Pattern:
 
 
 class PatternNode:
-    def __init__(self, value: Pattern, parent: 'PatternNode' = None, children=None):
+    def __init__(self, value: Pattern, parent: "PatternNode" = None, children=None):
         if children is None:
             children = []
         self.value: Pattern = value
-        self.children: List['PatternNode'] = children
+        self.children: List["PatternNode"] = children
         self.parent = parent
+
+    def __repr__(self):
+        return f"Node({self.value}, level={self.value.level})"
 
 
 class PatternTree:
     def __init__(self, values: List[str]):
         self.node_in_layers: List[List[PatternNode]] = [[] for _ in range(0, 5)]
+        self.pattern_to_node: Dict[Pattern, PatternNode] = {}
         self.values = values
 
     def get_all_patterns(self):
@@ -115,11 +131,13 @@ class PatternTree:
     def get_patterns_by_layers(self, layers, in_groups=False):
         if in_groups:
             return [[node.value for node in self.node_in_layers[layer]] for layer in layers]
-        return [pattern_node.value for pattern_node in
-                reduce(list.__add__, [self.node_in_layers[layer] for layer in layers], [])]
+        return [
+            pattern_node.value
+            for pattern_node in reduce(list.__add__, [self.node_in_layers[layer] for layer in layers], [])
+        ]
 
     @staticmethod
-    def build_from_strings(str_values: List[str]) -> 'PatternTree':
+    def build_from_strings(str_values: List[str]) -> "PatternTree":
         pattern_tree = PatternTree(str_values)
         pattern_to_node: Dict[str, PatternNode] = {}
 
@@ -138,12 +156,15 @@ class PatternTree:
                 if parent_pattern is None:
                     continue
                 if str(parent_pattern) in pattern_to_node:
-                    pattern_to_node[str(parent_pattern)].value = \
-                        pattern_to_node[str(parent_pattern)].value.combine(parent_pattern)
+                    pattern_to_node[str(parent_pattern)].value = pattern_to_node[str(parent_pattern)].value.combine(
+                        parent_pattern
+                    )
                     pattern_to_node[str(parent_pattern)].children.append(pattern_node)
+                    pattern_node.parent = pattern_to_node[str(parent_pattern)]
                 else:
                     parent_node = PatternNode(parent_pattern)
                     parent_node.children.append(pattern_node)
+                    pattern_node.parent = parent_node
                     pattern_tree.node_in_layers[i].append(parent_node)
                     pattern_to_node[str(parent_pattern)] = parent_node
             pattern_to_node.clear()

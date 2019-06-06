@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 
 from datafc.ml.classification.base import BaseClassifier
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 DUMMY_STR = "|#$%^&"
 
@@ -15,10 +15,10 @@ DUMMY_STR = "|#$%^&"
 class MultiBinary(BaseClassifier[T]):
     def __init__(self, sim_func: Callable[[T, T], List[float]], method: str = "lr"):
         self.labeled_data: List[Tuple[str, T]] = []
-        if method == 'random_forest':
+        if method == "random_forest":
             self.model = RandomForestClassifier(n_estimators=10)
         else:
-            self.model = LogisticRegression(solver='lbfgs')
+            self.model = LogisticRegression(solver="lbfgs")
         self.sim_func = sim_func
 
     def save(self, path: Union[str, Path]):
@@ -33,8 +33,9 @@ class MultiBinary(BaseClassifier[T]):
     def clear(self):
         self.labeled_data.clear()
 
-    def create_feature_vectors(self, labeled_cols1: List[Tuple[str, T]],
-                               labeled_cols2: List[Tuple[str, T]]) -> Tuple[List[List[float]], List[bool]]:
+    def create_feature_vectors(
+        self, labeled_cols1: List[Tuple[str, T]], labeled_cols2: List[Tuple[str, T]]
+    ) -> Tuple[List[List[float]], List[bool]]:
         vectors = []
         labels = []
         for label1, col1 in labeled_cols1:
@@ -64,12 +65,14 @@ class MultiBinary(BaseClassifier[T]):
 
     def predict(self, labeled_cols: List[T]) -> List[str]:
         train_vectors, _ = zip(
-            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data))
+            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data)
+        )
         return max(self.model.predict_proba(train_vectors), key=lambda x: x[1])
 
     def predict_proba(self, labeled_cols: List[T]) -> List[Dict[str, float]]:
         train_vectors, _ = zip(
-            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data))
+            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data)
+        )
 
         labels = [label for label, _ in self.labeled_data]
         scores_list = self.model.predict_proba(train_vectors)

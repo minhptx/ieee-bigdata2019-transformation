@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 from typing import Generic, TypeVar, Tuple, List, Dict
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class BaseClassifier(Generic[T], metaclass=ABCMeta):
@@ -16,6 +16,3 @@ class BaseClassifier(Generic[T], metaclass=ABCMeta):
     @abstractmethod
     def predict_proba(self, labeled_col: T) -> Dict[str, float]:
         pass
-
-
-

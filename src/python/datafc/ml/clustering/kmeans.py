@@ -5,7 +5,7 @@ from typing import List, TypeVar, Generic, Dict, Tuple
 from datafc.ml.clustering import ClusteringModel
 from datafc.ml import DistanceMeasurable
 
-T = TypeVar('T', bound=DistanceMeasurable)
+T = TypeVar("T", bound=DistanceMeasurable)
 
 
 class MinDistanceSeeder(Generic[T]):

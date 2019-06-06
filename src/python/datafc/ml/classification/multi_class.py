@@ -8,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 
 from datafc.ml.classification.base import BaseClassifier
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 DUMMY_STR = "|#$%^&"
 

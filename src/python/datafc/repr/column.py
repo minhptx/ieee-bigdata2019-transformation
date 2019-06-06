@@ -84,14 +84,14 @@ class ColumnBasedSource:
         return list(self.name_to_attribute.values())
 
     @staticmethod
-    def from_file(path: Union[Path, str]) -> 'ColumnBasedSource':
+    def from_file(path: Union[Path, str]) -> "ColumnBasedSource":
         if isinstance(path, str):
             path = Path(path)
-        if path.suffix == '.csv':
+        if path.suffix == ".csv":
             return ColumnBasedSource.__from_csv(path)
 
     @staticmethod
-    def __from_csv(path: Path) -> 'ColumnBasedSource':
+    def __from_csv(path: Path) -> "ColumnBasedSource":
         df = pd.DataFrame.from_csv(str(path))
         source = ColumnBasedSource(path.name.title())
         for column_name in df.columns.tolist():

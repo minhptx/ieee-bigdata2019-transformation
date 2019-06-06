@@ -8,4 +8,4 @@ def create_histogram_data(values: List[str]) -> List[int]:
 
 
 def create_ngrams(string_value: str, n: int) -> List[str]:
-    return [string_value[i: i + n] for i in range(len(string_value) - n)]
+    return [string_value[i : i + n] for i in range(len(string_value) - n)]

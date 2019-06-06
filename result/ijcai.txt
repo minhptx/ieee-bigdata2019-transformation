@@ -1,0 +1,1124 @@
+C:\Users\Clapika\Anaconda3\python.exe C:/Users/Clapika/Projects/python-data-transform/src/python/main/transformation_evaluation.py
+2019-03-31 23:29:28 INFO  Scenario: 1st_dimension
+[[2.60212411 4.71114852 3.10153459]]
+2019-03-31 23:29:43 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0.0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 14.95522928237915
+2019-03-31 23:29:43 INFO  Scenario: 1st_dim_1
+[[2.03425609 3.07072159 2.47882175]]
+2019-03-31 23:29:44 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0.0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 0.9220962524414062
+2019-03-31 23:29:44 INFO  Scenario: 2nd_dimension
+[[2.75596993 4.4926889  2.81720146]]
+2019-03-31 23:29:57 INFO  Transformation Accuracy: 0.9773462783171522 --- Top K Accuracy: 0.9773462783171522--- MRR Score: 0.9773462783171522--- Validation Precision: 0.13725490196078433 --- Validation Recall: 0.026415094339622643 --- Validation F1: 0.04430379746835444 --- Running Time: 12.820285081863403
+2019-03-31 23:29:57 INFO  Scenario: 2st_dim_1
+[[2.03425609 3.07072159 2.47882175]]
+2019-03-31 23:29:58 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0.0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 0.8750405311584473
+2019-03-31 23:29:58 INFO  Scenario: 3rd_dimension
+[[2.75596993 4.4926889  2.81720146]]
+2019-03-31 23:30:10 INFO  Transformation Accuracy: 0.3408360128617363 --- Top K Accuracy: 0.34726688102893893--- MRR Score: 0.3440514469453376--- Validation Precision: 0.9903381642512077 --- Validation Recall: 0.6634304207119741 --- Validation F1: 0.7945736434108527 --- Running Time: 11.82278561592102
+2019-03-31 23:30:10 INFO  Scenario: avg_year
+[[3.08916076 3.13009701 2.41925779]]
+2019-03-31 23:30:43 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0.0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 33.244054555892944
+2019-03-31 23:30:43 INFO  Scenario: bd1
+[[2.99791782 1.35638869 1.46671429]]
+2019-03-31 23:30:52 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 8.551699161529541
+2019-03-31 23:30:52 INFO  Scenario: bd2
+[[2.78192871 0.33264032 1.81810441]]
+2019-03-31 23:30:55 INFO  Transformation Accuracy: 0.168 --- Top K Accuracy: 0.168--- MRR Score: 0.168--- Validation Precision: 0.832 --- Validation Recall: 1.0 --- Validation F1: 0.9082969432314411 --- Running Time: 3.692380428314209
+2019-03-31 23:30:55 INFO  Scenario: bd3
+[[3.23937932 0.         1.4175092 ]]
+2019-03-31 23:31:05 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 10.152132511138916
+2019-03-31 23:31:05 INFO  Scenario: bd4
+[[3.24298319 0.24880123 1.6019881 ]]
+2019-03-31 23:31:12 INFO  Transformation Accuracy: 0.0 --- Top K Accuracy: 0.0--- MRR Score: 0.0--- Validation Precision: 0 --- Validation Recall: 0 --- Validation F1: 0 --- Running Time: 6.8150389194488525
+2019-03-31 23:31:12 INFO  Scenario: birth
+[[3.31792933 3.25470824 3.5328351 ]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-03-31 23:32:20 INFO  Transformation Accuracy: 0.9101449275362319 --- Top K Accuracy: 0.9101449275362319--- MRR Score: 0.9101449275362319--- Validation Precision: 0.08985507246376812 --- Validation Recall: 1.0 --- Validation F1: 0.16489361702127658 --- Running Time: 67.95371747016907
+2019-03-31 23:32:20 INFO  Scenario: comic
+[[3.22088801 4.2750835  5.0576642 ]]
+2019-03-31 23:53:59 INFO  Transformation Accuracy: 0.01284796573875803 --- Top K Accuracy: 0.01284796573875803--- MRR Score: 0.01284796573875803--- Validation Precision: 0.987012987012987 --- Validation Recall: 0.987012987012987 --- Validation F1: 0.987012987012987 --- Running Time: 1298.2976706027985
+2019-03-31 23:53:59 INFO  Scenario: date_semantic
+[[3.08718906 0.         1.6219577 ]]
+2019-03-31 23:54:00 INFO  Transformation Accuracy: 0.9838709677419355 --- Top K Accuracy: 0.9838709677419355--- MRR Score: 0.9838709677419355--- Validation Precision: 0.5 --- Validation Recall: 0.01639344262295082 --- Validation F1: 0.031746031746031744 --- Running Time: 1.9485924243927002
+2019-03-31 23:54:00 INFO  Scenario: death
+[[3.31792933 3.25470824 3.5328351 ]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-03-31 23:55:04 INFO  Transformation Accuracy: 0.7994186046511628 --- Top K Accuracy: 0.7994186046511628--- MRR Score: 0.7994186046511628--- Validation Precision: 0.2005813953488372 --- Validation Recall: 1.0 --- Validation F1: 0.3341404358353511 --- Running Time: 63.167134284973145
+2019-03-31 23:55:04 INFO  Scenario: f1
+[[4.5354724  4.10239662 1.50445202]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-03-31 23:55:46 INFO  Transformation Accuracy: 0.7142857142857143 --- Top K Accuracy: 0.7142857142857143--- MRR Score: 0.7142857142857143--- Validation Precision: 1.0 --- Validation Recall: 0.2857142857142857 --- Validation F1: 0.4444444444444445 --- Running Time: 42.291478872299194
+2019-03-31 23:55:46 INFO  Scenario: huston_2nd
+[[2.3580182  1.25978131 4.36071146]]
+2019-03-31 23:56:37 INFO  Transformation Accuracy: 0.5625 --- Top K Accuracy: 0.5625--- MRR Score: 0.5625--- Validation Precision: 0.4375 --- Validation Recall: 1.0 --- Validation F1: 0.6086956521739131 --- Running Time: 50.652445793151855
+2019-03-31 23:56:37 INFO  Scenario: huston_3rd
+[[2.35808302 1.25976742 4.36066936]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-03-31 23:57:28 INFO  Transformation Accuracy: 0.2013888888888889 --- Top K Accuracy: 0.20833333333333334--- MRR Score: 0.2037037037037037--- Validation Precision: 0.7986111111111112 --- Validation Recall: 1.0 --- Validation F1: 0.888030888030888 --- Running Time: 51.605140209198
+2019-03-31 23:57:28 INFO  Scenario: lat_long
+[[3.0363951  3.23448664 4.03537853]]
+2019-03-31 23:58:37 INFO  Transformation Accuracy: 0.058823529411764705 --- Top K Accuracy: 0.058823529411764705--- MRR Score: 0.058823529411764705--- Validation Precision: 0.9411764705882353 --- Validation Recall: 1.0 --- Validation F1: 0.9696969696969697 --- Running Time: 68.58709144592285
+2019-03-31 23:58:37 INFO  Scenario: MOCA_dimension
+[[1.95521566 2.37991054 4.04708529]]
+2019-04-01 00:00:17 INFO  Transformation Accuracy: 0.8759842519685039 --- Top K Accuracy: 0.889763779527559--- MRR Score: 0.8805774278215223--- Validation Precision: 0.8513513513513513 --- Validation Recall: 0.1267605633802817 --- Validation F1: 0.22066549912434325 --- Running Time: 100.19828128814697
+2019-04-01 00:00:17 INFO  Scenario: name1
+[[2.63397819 4.30225241 3.74280166]]
+2019-04-01 00:00:56 INFO  Transformation Accuracy: 0.886 --- Top K Accuracy: 0.886--- MRR Score: 0.886--- Validation Precision: 0.691358024691358 --- Validation Recall: 0.11814345991561181 --- Validation F1: 0.20180180180180182 --- Running Time: 39.377766847610474
+2019-04-01 00:00:56 INFO  Scenario: name2
+[[2.71579598 4.60386489 3.81643111]]
+2019-04-01 00:01:53 INFO  Transformation Accuracy: 0.9959239130434783 --- Top K Accuracy: 0.9959239130434783--- MRR Score: 0.9959239130434783--- Validation Precision: 0.004076086956521739 --- Validation Recall: 1.0 --- Validation F1: 0.008119079837618403 --- Running Time: 56.065879583358765
+2019-04-01 00:01:53 INFO  Scenario: name4
+[[2.49185817 3.9969701  3.72230037]]
+2019-04-01 00:02:04 INFO  Transformation Accuracy: 0.928 --- Top K Accuracy: 0.928--- MRR Score: 0.928--- Validation Precision: 0.072 --- Validation Recall: 1.0 --- Validation F1: 0.1343283582089552 --- Running Time: 11.454259157180786
+2019-04-01 00:02:04 INFO  Scenario: s10_namehyphen
+[[3.89613973 0.47679779 4.05316069]]
+2019-04-01 00:05:11 INFO  Transformation Accuracy: 0.8902691511387164 --- Top K Accuracy: 0.8902691511387164--- MRR Score: 0.8902691511387164--- Validation Precision: 0.10973084886128365 --- Validation Recall: 1.0 --- Validation F1: 0.19776119402985076 --- Running Time: 186.86665439605713
+2019-04-01 00:05:11 INFO  Scenario: s1_age
+[[2.16315049 2.87102713 5.5185971 ]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-04-01 00:07:14 INFO  Transformation Accuracy: 0.025477707006369428 --- Top K Accuracy: 0.025477707006369428--- MRR Score: 0.025477707006369428--- Validation Precision: 0.9745222929936306 --- Validation Recall: 1.0 --- Validation F1: 0.9870967741935484 --- Running Time: 123.22970175743103
+2019-04-01 00:07:14 INFO  Scenario: s2_date
+[[2.22077773 2.91742117 5.39140978]]
+2019-04-01 00:10:12 INFO  Transformation Accuracy: 0.8571428571428571 --- Top K Accuracy: 0.865546218487395--- MRR Score: 0.8613445378151261--- Validation Precision: 0.14285714285714285 --- Validation Recall: 1.0 --- Validation F1: 0.25 --- Running Time: 178.0295615196228
+2019-04-01 00:10:12 INFO  Scenario: s3_instate
+[[4.1934556  1.21018741 2.98282743]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-04-01 00:12:49 INFO  Transformation Accuracy: 0.9639468690702088 --- Top K Accuracy: 0.9639468690702088--- MRR Score: 0.9639468690702088--- Validation Precision: 0.036053130929791274 --- Validation Recall: 1.0 --- Validation F1: 0.0695970695970696 --- Running Time: 156.5724093914032
+2019-04-01 00:12:49 INFO  Scenario: s4_outstate
+[[4.1934556  1.21018741 2.98282743]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-04-01 00:15:15 INFO  Transformation Accuracy: 0.6110056925996205 --- Top K Accuracy: 0.6110056925996205--- MRR Score: 0.6110056925996205--- Validation Precision: 0.4027504911591356 --- Validation Recall: 0.9192825112107623 --- Validation F1: 0.5601092896174864 --- Running Time: 146.27527046203613
+2019-04-01 00:15:15 INFO  Scenario: s5_3rd
+[[2.05482934 2.5712085  3.36965782]]
+2019-04-01 00:18:19 INFO  Transformation Accuracy: 0.0 --- Top K Accuracy: 0.0--- MRR Score: 0.0--- Validation Precision: 1.0 --- Validation Recall: 1.0 --- Validation F1: 1.0 --- Running Time: 184.14454245567322
+2019-04-01 00:18:19 INFO  Scenario: s5_name
+[[3.5897981  6.51790802 3.26177036]]
+2019-04-01 00:19:08 INFO  Transformation Accuracy: 0.9812080536912752 --- Top K Accuracy: 0.9812080536912752--- MRR Score: 0.9812080536912752--- Validation Precision: 1.0 --- Validation Recall: 0.010825439783491205 --- Validation F1: 0.0214190093708166 --- Running Time: 48.84500074386597
+2019-04-01 00:19:08 INFO  Scenario: s6
+[[2.64381836 4.5823769  4.6205679 ]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-04-01 00:36:58 INFO  Transformation Accuracy: 0.8662280701754386 --- Top K Accuracy: 0.8662280701754386--- MRR Score: 0.8662280701754386--- Validation Precision: 0.7857142857142857 --- Validation Recall: 0.10304449648711944 --- Validation F1: 0.1821946169772257 --- Running Time: 1069.5275447368622
+2019-04-01 00:36:58 INFO  Scenario: s8
+[[3.75310475 6.78629259 3.53573768]]
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+C:\Users\Clapika\Projects\python-data-transform\src\python\datafc\transform\token_mapping\base.py:101: RuntimeWarning: invalid value encountered in double_scalars
+  scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+2019-04-01 00:37:19 INFO  Transformation Accuracy: 0.8389830508474576 --- Top K Accuracy: 0.8389830508474576--- MRR Score: 0.8389830508474576--- Validation Precision: 0.6557377049180327 --- Validation Recall: 0.12658227848101267 --- Validation F1: 0.21220159151193635 --- Running Time: 21.050997734069824
+2019-04-01 00:37:19 INFO  Scenario: s8_website
+[[2.62599224 1.80719612 3.37354221]]
+2019-04-01 00:37:35 INFO  Transformation Accuracy: 0.9605263157894737 --- Top K Accuracy: 0.9758771929824561--- MRR Score: 0.9682017543859649--- Validation Precision: 0.25 --- Validation Recall: 0.04477611940298507 --- Validation F1: 0.07594936708860758 --- Running Time: 15.928143978118896
+2019-04-01 00:37:35 INFO  Scenario: s9_tel
+[[3.3180625  3.72225779 2.25218603]]
+2019-04-01 00:37:50 INFO  Transformation Accuracy: 0.652 --- Top K Accuracy: 0.652--- MRR Score: 0.652--- Validation Precision: 0.87 --- Validation Recall: 0.3670886075949367 --- Validation F1: 0.516320474777448 --- Running Time: 15.721033096313477
+2019-04-01 00:37:50 INFO  Scenario: senator_name
+[[3.1057245  5.56106685 4.32188286]]
+2019-04-01 00:38:46 INFO  Transformation Accuracy: 0.9329608938547486 --- Top K Accuracy: 0.9329608938547486--- MRR Score: 0.9329608938547486--- Validation Precision: 0.0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 55.71047830581665
+2019-04-01 00:38:46 INFO  Scenario: t1
+[[2.61845775 2.99765139 2.70977662]]
+2019-04-01 00:38:48 INFO  Transformation Accuracy: 1.0 --- Top K Accuracy: 1.0--- MRR Score: 1.0--- Validation Precision: 0.0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 1.9260058403015137
+2019-04-01 00:38:48 INFO  Scenario: uri
+[[3.47651416 0.49754316 2.89116679]]
+2019-04-01 00:38:53 INFO  Transformation Accuracy: 0.9787234042553191 --- Top K Accuracy: 0.9787234042553191--- MRR Score: 0.9787234042553191--- Validation Precision: 0 --- Validation Recall: 0.0 --- Validation F1: 0 --- Running Time: 4.913025617599487
+2019-04-01 00:38:53 INFO  Macro Mean Accuracy: 0.7214956422226891 --- Micro Mean Accuracy: 0.7442938408596109 --- Macro Top-K Accuracy: 0.7229097832979177 --- Micro Top-K Accuracy: 0.7455579745768663 --- Macro MRR Score: 0.7221067684454724 --- Micro MRR Score: 0.7448322681836271 --- Exact Accuracy: 0.19444444444444445 --- Validation Precision: 0.41650610147719974 --- Validation Recall: 0.27139568947478554 --- Validation F-measure: 0.3286456353731154 --- Mean Running Time: 115.67196028762393
+
+Process finished with exit code 0

@@ -35,14 +35,14 @@ class RowBasedSource:
         self.entries.append(row)
 
     @staticmethod
-    def from_file(path: Union[Path, str]) -> 'RowBasedSource':
+    def from_file(path: Union[Path, str]) -> "RowBasedSource":
         if isinstance(path, str):
             path = Path(path)
-        if path.suffix == '.csv':
+        if path.suffix == ".csv":
             return RowBasedSource.__from_csv(path)
 
     @staticmethod
-    def __from_csv(path: Path) -> 'RowBasedSource':
+    def __from_csv(path: Path) -> "RowBasedSource":
         df = pd.read_csv(str(path))
         source = RowBasedSource(path.name.title())
         for index, df_row in df.iterrows():

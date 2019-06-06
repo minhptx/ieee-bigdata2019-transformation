@@ -1,12 +1,12 @@
 import logging
-from dataclasses import dataclass
 from typing import List, Tuple
 
 from sklearn.model_selection import KFold
 
 from datafc.ml.classification.multi_binary import MultiBinary
 from datafc.repr.column import Column
-from datafc.sim.column_sim import values_jaccard, syntactic_sim, ngram_jaccard, length_syntactic_sim
+from datafc.syntactic.pattern import Pattern
+from datafc.transform.token_mapping.feature.column_sim import values_jaccard, syntactic_sim, ngram_jaccard, text_cosine
 from datafc.syntactic.token import TokenData
 from datafc.transform.operators import Operation, Constant
 from datafc.transform.token_mapping.base import TokenMappingBaseModel
@@ -15,18 +15,20 @@ logger = logging.getLogger(__name__)
 
 
 class TokenSimMappingModel(TokenMappingBaseModel):
-    def __init__(self):
+    def __init__(self, string_similarity="jaccard"):
         self.scoring_model: MultiBinary = MultiBinary[Column](self.compute_sim)
+        self.string_similarity = string_similarity
         super().__init__()
 
-    @staticmethod
-    def compute_sim(col1: Column, col2: Column) -> List[float]:
-        return [values_jaccard(col1, col2), ngram_jaccard(col1, col2, 1), ngram_jaccard(col1, col2, 2),
-                length_syntactic_sim(col1, col2)]
+    def compute_sim(self, col1: Column, col2: Column) -> List[float]:
+        if self.string_similarity == "jaccard":
+            return [values_jaccard(col1, col2), ngram_jaccard(col1, col2, 2), syntactic_sim(col1, col2)]
+        else:
+            return [text_cosine(col1, col2), syntactic_sim(col1, col2)]
 
     def score_operation(self, operation) -> float:
         if isinstance(operation, Constant):
-            return 1
+            return 1.0
         transformed_column = Column(values=operation.transform())
         target_column = Column(values=operation.target_token.values)
         result = self.scoring_model.predict_similarity(transformed_column, target_column)
@@ -38,7 +40,7 @@ class TokenSimMappingModel(TokenMappingBaseModel):
             return max({op: self.score_operation(op) for op in operation_candidates}.items(), key=lambda x: x[1])
         return None, 0.0
 
-    def train_scoring_model(self, example_patterns_by_groups):
+    def train_scoring_model(self, example_patterns_by_groups: List[List[Pattern]]):
         labeled_pairs = []
 
         for example_patterns in example_patterns_by_groups:

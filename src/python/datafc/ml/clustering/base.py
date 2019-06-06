@@ -3,7 +3,7 @@ from typing import Generic, TypeVar, List, Dict
 
 from datafc.ml import DistanceMeasurable
 
-T = TypeVar('T', bound=DistanceMeasurable)
+T = TypeVar("T", bound=DistanceMeasurable)
 
 
 class ClusteringModel(Generic[T]):

@@ -34,9 +34,7 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
 
         for idx1, target_token in enumerate(target_pattern.tokens):
             for idx2, original_token in enumerate(original_pattern.tokens):
-                operation, score = self.generate_candidate_functions(
-                    original_token, target_token)
-
+                operation, score = self.generate_candidate_functions(original_token, target_token)
                 token_pair_to_operation[idx1][idx2] = operation
                 token_pair_to_score[idx1][idx2] = score
 
@@ -70,8 +68,10 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
         return score_matrix[row_indices, col_indices].sum() / len(row_indices), index_to_operation
 
     @staticmethod
-    def find_best_k_mappings(token_pair_to_score, token_pair_to_operation,
-                             k: int) -> Tuple[List[float], List[Dict[int, Operation]]]:
+    def find_best_k_mappings(
+        token_pair_to_score, token_pair_to_operation, k: int
+    ) -> Tuple[List[float], List[Dict[int, Operation]]]:
+
         scores = []
         index_to_operation_list = []
         constant_indices = []
@@ -98,13 +98,17 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
                 pre_delete_index = post_delete_mapping[target_idx]
                 running_index_to_operation[pre_delete_index] = token_pair_to_operation[pre_delete_index][original_idx]
 
-            scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
+            if len(row_indices) == 0:
+                scores.append(0)
+            else:
+                scores.append(score_matrix[row_indices, col_indices].sum() / len(row_indices))
             index_to_operation_list.append(running_index_to_operation)
 
-            # if token_pair_to_score.size == 0:
-            #     break
+            if score_matrix.size == 0:
+                break
             max_indices = np.unravel_index(score_matrix.argmax(), score_matrix.shape)
             score_matrix[max_indices] = 0.01
+
         return scores, index_to_operation_list
 
     def generate_output_strings(self, original_pattern, target_pattern, token_to_operation):
@@ -119,51 +123,63 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
             original_to_transformed_pairs.append((original_pattern.values[idx], target_string))
 
         for idx, operation in token_to_operation.items():
-            logger.debug("%s %s %s %s %s %s %s %s" % (idx, operation.original_token, operation.target_token, operation,
-                                                      operation.original_token.values[:3],
-                                                      operation.transform()[:3],
-                                                      operation.target_token.values[:3],
-                                                      self.score_operation(operation)))
+            logger.debug(
+                "%s %s %s %s %s %s %s %s"
+                % (
+                    idx,
+                    operation.original_token,
+                    operation.target_token,
+                    operation,
+                    operation.original_token.values[:3],
+                    operation.transform()[:3],
+                    operation.target_token.values[:3],
+                    self.score_operation(operation),
+                )
+            )
         logger.debug("Original to target %s" % original_to_transformed_pairs[:3])
         logger.debug("--------------------------------------------------------------------")
 
         return original_to_transformed_pairs
 
-    def learn(self, original_pattern: Pattern, target_pattern: Pattern) -> \
-            Tuple[List[Tuple[str, str]], float]:
+    def learn(self, original_pattern: Pattern, target_pattern: Pattern) -> Tuple[List[Tuple[str, str]], float]:
 
-        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(original_pattern,
-                                                                                    target_pattern)
+        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(original_pattern, target_pattern)
 
-        transformation_score, token_to_operation = \
-            TokenMappingBaseModel.find_best_mapping(token_pair_to_score, token_pair_to_operation)
+        transformation_score, token_to_operation = TokenMappingBaseModel.find_best_mapping(
+            token_pair_to_score, token_pair_to_operation
+        )
 
         if None in token_to_operation.values() or len(target_pattern.tokens) != len(token_to_operation):
             return [(original_value, "") for original_value in original_pattern.values], 0
 
-        return self.generate_output_strings(original_pattern, target_pattern,
-                                            token_to_operation), transformation_score
+        return (
+            self.generate_output_strings(original_pattern, target_pattern, token_to_operation),
+            transformation_score,
+        )
 
-    def learn_top_k(self, original_pattern: Pattern, target_pattern: Pattern, k: int) -> \
-            Tuple[List[List[Tuple[str, str]]], List[float]]:
+    def learn_top_k(
+        self, original_pattern: Pattern, target_pattern: Pattern, k: int
+    ) -> Tuple[List[List[Tuple[str, str]]], List[float]]:
 
         scores = []
         original_to_target_pairs_list = []
 
-        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(original_pattern,
-                                                                                    target_pattern)
+        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(original_pattern, target_pattern)
 
-        transformation_scores, token_to_operation_list = \
-            TokenMappingBaseModel.find_best_k_mappings(token_pair_to_score, token_pair_to_operation, k)
+        transformation_scores, token_to_operation_list = TokenMappingBaseModel.find_best_k_mappings(
+            token_pair_to_score, token_pair_to_operation, k
+        )
 
         for transformation_score, token_to_operation in zip(transformation_scores, token_to_operation_list):
             if None in token_to_operation.values() or len(target_pattern.tokens) != len(token_to_operation):
                 scores.append(0)
                 original_to_target_pairs_list.append(
-                    [(original_value, "") for original_value in original_pattern.values])
+                    [(original_value, "") for original_value in original_pattern.values]
+                )
             else:
-                original_to_target_string_pairs = self.generate_output_strings(original_pattern, target_pattern,
-                                                                               token_to_operation)
+                original_to_target_string_pairs = self.generate_output_strings(
+                    original_pattern, target_pattern, token_to_operation
+                )
                 scores.append(transformation_score)
                 original_to_target_pairs_list.append(original_to_target_string_pairs)
 
