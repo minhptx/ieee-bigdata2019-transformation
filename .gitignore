@@ -3,4 +3,4 @@ debug/
 **/__pycache__/**
 *.log
 backup/
-
+log/

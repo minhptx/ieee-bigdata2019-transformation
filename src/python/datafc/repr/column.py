@@ -6,7 +6,7 @@ from typing import List, Dict, Union
 
 import pandas as pd
 
-logger = logging.getLogger("column")
+logger = logging.getLogger("myapp")
 
 
 class DataType(Enum):

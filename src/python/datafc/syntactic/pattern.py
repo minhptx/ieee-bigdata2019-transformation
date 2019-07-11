@@ -1,17 +1,15 @@
 from functools import reduce
-from functools import reduce
 from typing import List, Dict, Optional
 
-import numpy as np
 import regex as re
 
 from datafc.repr.column import Column
-from datafc.syntactic.token import TokenData, Uppercase, Lowercase, Alphabet, Digit, Alphanum, Whitespace, Alnumspace
+from datafc.syntactic.token import Token, Uppercase, Lowercase, Alphabet, Digit, Alphanum, Whitespace, Alnumspace
 
 
 class Pattern:
-    def __init__(self, token_sequence: List[TokenData], level=0):
-        self.tokens: List[TokenData] = token_sequence
+    def __init__(self, token_sequence: List[Token], level=0):
+        self.tokens: List[Token] = token_sequence
         self.level = level
         self.values = ["" for _ in range(len(self.tokens[0].values))]
 
@@ -58,29 +56,29 @@ class Pattern:
         return columns
 
     @staticmethod
-    def build_from_string(string: str) -> "Pattern":
-        tokens = TokenData.get_basic_pattern(string)
+    def build_from_string(string: str, level) -> "Pattern":
+        tokens = Token.get_pattern_by_level(string, level)
 
-        return Pattern(tokens)
+        return Pattern(tokens, level=level)
 
     def level_up(self) -> Optional["Pattern"]:
-        tokens: List[Optional[TokenData]] = [None] * len(self.tokens)
+        tokens: List[Optional[Token]] = [None] * len(self.tokens)
         for idx, token in enumerate(self.tokens):
             if self.level == 0:
-                tokens[idx] = TokenData(token.token_type, -1, -1, token.values)
+                tokens[idx] = Token(token.token_type, -1, -1, token.values)
             elif self.level == 1:
                 if token.token_type == Uppercase or token.token_type == Lowercase:
-                    tokens[idx] = TokenData(Alphabet, -1, -1, token.values)
+                    tokens[idx] = Token(Alphabet, -1, -1, token.values)
                 else:
                     tokens[idx] = self.tokens[idx]
             elif self.level == 2:
                 if token.token_type == Alphabet or token.token_type == Digit:
-                    tokens[idx] = TokenData(Alphanum, -1, -1, token.values)
+                    tokens[idx] = Token(Alphanum, -1, -1, token.values)
                 else:
                     tokens[idx] = self.tokens[idx]
             elif self.level == 3:
                 if token.token_type == Alphanum or token.token_type == Whitespace:
-                    tokens[idx] = TokenData(Alnumspace, -1, -1, token.values)
+                    tokens[idx] = Token(Alnumspace, -1, -1, token.values)
                 else:
                     tokens[idx] = self.tokens[idx]
 
@@ -121,7 +119,7 @@ class PatternNode:
 
 class PatternTree:
     def __init__(self, values: List[str]):
-        self.node_in_layers: List[List[PatternNode]] = [[] for _ in range(0, 5)]
+        self.node_in_layers: List[List[PatternNode]] = [[] for _ in range(0, 6)]
         self.pattern_to_node: Dict[Pattern, PatternNode] = {}
         self.values = values
 
@@ -139,34 +137,50 @@ class PatternTree:
     @staticmethod
     def build_from_strings(str_values: List[str]) -> "PatternTree":
         pattern_tree = PatternTree(str_values)
-        pattern_to_node: Dict[str, PatternNode] = {}
 
-        for str_value in str_values:
-            pattern = Pattern.build_from_string(str_value.strip())
-            if str(pattern) in pattern_to_node:
-                pattern_to_node[str(pattern)].value = pattern.combine(pattern_to_node[str(pattern)].value)
-            else:
-                pattern_tree.node_in_layers[0].append(PatternNode(pattern))
-
-        pattern_to_node.clear()
-        for i in range(1, 5):
-            for pattern_node in pattern_tree.node_in_layers[i - 1]:
-                parent_pattern = pattern_node.value.level_up()
-
-                if parent_pattern is None:
-                    continue
-                if str(parent_pattern) in pattern_to_node:
-                    pattern_to_node[str(parent_pattern)].value = pattern_to_node[str(parent_pattern)].value.combine(
-                        parent_pattern
+        for layer in range(0, 6):
+            for str_value in str_values:
+                pattern = Pattern.build_from_string(str_value.strip(), layer)
+                if pattern in pattern_tree.pattern_to_node:
+                    pattern_tree.pattern_to_node[pattern].value = pattern_tree.pattern_to_node[pattern].value.combine(
+                        pattern
                     )
-                    pattern_to_node[str(parent_pattern)].children.append(pattern_node)
-                    pattern_node.parent = pattern_to_node[str(parent_pattern)]
                 else:
-                    parent_node = PatternNode(parent_pattern)
-                    parent_node.children.append(pattern_node)
-                    pattern_node.parent = parent_node
-                    pattern_tree.node_in_layers[i].append(parent_node)
-                    pattern_to_node[str(parent_pattern)] = parent_node
-            pattern_to_node.clear()
-
+                    pattern_node = PatternNode(pattern)
+                    pattern_tree.pattern_to_node[pattern] = pattern_node
+                    pattern_tree.node_in_layers[layer].append(pattern_node)
         return pattern_tree
+
+    # @staticmethod
+    # def build_from_strings(str_values: List[str]) -> "PatternTree":
+    #     pattern_tree = PatternTree(str_values)
+    #     pattern_to_node: Dict[str, PatternNode] = {}
+    #
+    #     for str_value in str_values:
+    #         pattern = Pattern.build_from_string(str_value.strip())
+    #         if str(pattern) in pattern_to_node:
+    #             pattern_to_node[str(pattern)].value = pattern.combine(pattern_to_node[str(pattern)].value)
+    #         else:
+    #             pattern_tree.node_in_layers[0].append(PatternNode(pattern))
+    #
+    #     pattern_to_node.clear()
+    #     for i in range(1, 5):
+    #         for pattern_node in pattern_tree.node_in_layers[i - 1]:
+    #             parent_pattern = pattern_node.value.level_up()
+    #
+    #             if parent_pattern is None:
+    #                 continue
+    #             if str(parent_pattern) in pattern_to_node:
+    #                 pattern_to_node[str(parent_pattern)].value = pattern_to_node[str(parent_pattern)].value.combine(
+    #                     parent_pattern
+    #                 )
+    #                 pattern_to_node[str(parent_pattern)].children.append(pattern_node)
+    #                 pattern_node.parent = pattern_to_node[str(parent_pattern)]
+    #             else:
+    #                 parent_node = PatternNode(parent_pattern)
+    #                 parent_node.children.append(pattern_node)
+    #                 pattern_node.parent = parent_node
+    #                 pattern_tree.node_in_layers[i].append(parent_node)
+    #                 pattern_to_node[str(parent_pattern)] = parent_node
+    #         pattern_to_node.clear()
+    #     return pattern_tree

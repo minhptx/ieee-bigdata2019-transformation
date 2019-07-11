@@ -2,45 +2,60 @@
 version: 1
 disable_existing_loggers: False
 formatters:
-    simple:
-        format: "%(asctime)s %(levelname)-5s %(message)s"
-        datefmt: "%Y-%m-%d %H:%M:%S"
-    error:
-        format: "%(asctime)s %(levelname)-5s [%(filename)s:%(lineno)d] %(message)s"
-        datefmt: "%Y-%m-%d %H:%M:%S"
+  simple:
+    format: "%(asctime)s %(levelname)-5s %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
+  error:
+    format: "%(asctime)s %(levelname)-5s [%(filename)s:%(lineno)d] %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
 
 
 handlers:
-    console:
-        class: logging.StreamHandler
-        level: INFO
-        formatter: simple
-        stream: ext://sys.stdout
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
 
-    debug_file_handler:
-        class: logging.handlers.RotatingFileHandler
-        level: DEBUG
-        formatter: simple
-        filename: debug.log
-        maxBytes: 10485760 # 10MB
-        backupCount: 1
-        encoding: utf8
+  error_console:
+    class: logging.StreamHandler
+    level: ERROR
+    formatter: simple
+    stream: ext://sys.stderr
 
-    error_file_handler:
-        class: logging.handlers.RotatingFileHandler
-        level: ERROR
-        formatter: error
-        filename: errors.log
-        maxBytes: 10485760 # 10MB
-        backupCount: 1
-        encoding: utf8
+  info_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    filename: log/info.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 1
+    encoding: utf8
+
+  debug_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: simple
+    filename: log/debug.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 1
+    encoding: utf8
+
+  error_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: error
+    filename: log/errors.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 1
+    encoding: utf8
 
 loggers:
-    my_module:
-        level: DEBUG
-        handlers: [console]
-        propagate: no
+  myapp:
+    level: INFO
+    handlers: [console, info_file_handler, debug_file_handler, error_file_handler]
+    propagate: yes
 
 root:
-    level: DEBUG
-    handlers: [console, debug_file_handler, error_file_handler]
+  level: ERROR
+  handlers: [error_console]
