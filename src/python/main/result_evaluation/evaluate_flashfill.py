@@ -2,7 +2,7 @@ import csv
 import logging
 from pathlib import Path
 
-from datafc.evaluation.evaluator import Evaluator
+from datafc.eval.evaluator import Evaluator
 from datafc.utils.logging import setup_logging
 
 setup_logging("conf/logging.yaml")

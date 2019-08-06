@@ -1,4 +1,4 @@
-from datafc.syntactic.pattern import PatternTree
+from datafc.syn.pattern import PatternTree
 
 
 class Validator:

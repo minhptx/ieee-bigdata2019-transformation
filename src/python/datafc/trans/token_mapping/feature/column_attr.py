@@ -3,7 +3,7 @@ from collections import defaultdict
 import nltk
 import regex as re
 
-from datafc.syntactic.token import BASIC_TYPES
+from datafc.syn.token import BASIC_TYPES
 
 
 def char_count(value):

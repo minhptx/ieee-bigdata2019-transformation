@@ -9,7 +9,7 @@ except:
 #%% [markdown]
 # # Data Transformation Experiments
 # 
-# ## This notebook presents a set of experiments running for data transformation.
+# ## This notebook presents a set of experiments running for data trans.
 # ## First, we need to set up the environment and observers.
 
 #%%
@@ -24,7 +24,7 @@ from sacred.observers import MongoObserver
 
 #%%
 from pathlib import Path
-from datafc.evaluation import Evaluator
+from datafc.eval import Evaluator
 
 data_folder = Path("../../data/standard")
 ex = Experiment("jupyter_ex", interactive=True)

@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from datafc.syntactic.token import TokenType, TokenType
+from datafc.syn.token import TokenType, TokenType
 
 type_name_to_regex: Dict[str, str] = {
     "Uppercase": r"\p{Lu}+",

@@ -1,8 +1,8 @@
 import logging
 from typing import List
 
-from datafc.syntactic.pattern import PatternTree
-from datafc.transformation.pattern_mapping import PatternMappingModel
+from datafc.syn.pattern import PatternTree
+from datafc.trans.pattern_mapping import PatternMappingModel
 
 logger = logging.getLogger("myapp")
 

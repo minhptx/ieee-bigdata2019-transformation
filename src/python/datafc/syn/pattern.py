@@ -4,7 +4,7 @@ from typing import List, Dict, Optional
 import regex as re
 
 from datafc.repr.column import Column
-from datafc.syntactic.token import Token, Uppercase, Lowercase, Alphabet, Digit, Alphanum, Whitespace, Alnumspace
+from datafc.syn.token import Token, Uppercase, Lowercase, Alphabet, Digit, Alphanum, Whitespace, Alnumspace
 
 
 class Pattern:

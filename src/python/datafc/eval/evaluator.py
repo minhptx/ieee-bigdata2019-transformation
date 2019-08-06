@@ -4,7 +4,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import List, Dict, Tuple, Union
 
-from datafc.transformation.model import TransformationModel
+from datafc.trans.model import TransformationModel
 
 logger = logging.getLogger("myapp")
 

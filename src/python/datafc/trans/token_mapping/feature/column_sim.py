@@ -4,8 +4,8 @@ from sklearn.metrics import normalized_mutual_info_score
 
 from datafc.repr.column import Column
 from datafc.repr.helpers import create_ngrams
-from datafc.syntactic.token import Token
-from datafc.transformation.token_mapping.feature import jaccard, Spacy, cosine
+from datafc.syn.token import Token
+from datafc.trans.token_mapping.feature import jaccard, Spacy, cosine
 
 
 def name_jaccard(col1: Column, col2: Column) -> float:

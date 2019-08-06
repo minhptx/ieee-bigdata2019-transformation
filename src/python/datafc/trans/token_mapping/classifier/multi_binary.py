@@ -5,7 +5,7 @@ from joblib import dump, load
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
-from datafc.transformation.token_mapping.classifier.base import BaseClassifier
+from datafc.trans.token_mapping.classifier.base import BaseClassifier
 
 T = TypeVar("T")
 

@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABCMeta
 from typing import List
 
-from datafc.syntactic.token import Token, Uppercase, Lowercase, StartToken
+from datafc.syn.token import Token, Uppercase, Lowercase, StartToken
 
 
 class Operation(metaclass=ABCMeta):

@@ -7,9 +7,9 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment
 from tabulate import tabulate
 
-from datafc.syntactic.pattern import Pattern
-from datafc.syntactic.token import Token
-from datafc.transformation.operators import Operation, Constant
+from datafc.syn.pattern import Pattern
+from datafc.syn.token import Token
+from datafc.trans.operators import Operation, Constant
 
 logger = logging.getLogger("myapp")
 

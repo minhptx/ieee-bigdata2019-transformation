@@ -1,10 +1,10 @@
 import logging
 
 from datafc.repr.column import Column
-from datafc.syntactic.token import Token
-from datafc.transformation.operators import Operation, Constant
-from datafc.transformation.token_mapping import TokenMappingBaseModel
-from datafc.transformation.token_mapping.feature.column_sim import values_jaccard, syntactic_sim
+from datafc.syn.token import Token
+from datafc.trans.operators import Operation, Constant
+from datafc.trans.token_mapping import TokenMappingBaseModel
+from datafc.trans.token_mapping.feature.column_sim import values_jaccard, syntactic_sim
 
 logger = logging.getLogger("myapp")
 

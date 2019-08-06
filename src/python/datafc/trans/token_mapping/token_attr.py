@@ -3,12 +3,12 @@ from typing import List, Tuple, Dict
 
 import numpy as np
 
-from datafc.syntactic.pattern import Pattern
-from datafc.syntactic.token import Token
-from datafc.transformation.operators import Operation, Constant
-from datafc.transformation.token_mapping import TokenMappingBaseModel
-from datafc.transformation.token_mapping.classifier import MultiClass
-from datafc.transformation.token_mapping.feature.column_attr import char_count, type_count, word_count, length
+from datafc.syn.pattern import Pattern
+from datafc.syn.token import Token
+from datafc.trans.operators import Operation, Constant
+from datafc.trans.token_mapping import TokenMappingBaseModel
+from datafc.trans.token_mapping.classifier import MultiClass
+from datafc.trans.token_mapping.feature.column_attr import char_count, type_count, word_count, length
 
 logger = logging.getLogger("myapp")
 

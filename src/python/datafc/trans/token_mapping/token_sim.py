@@ -4,12 +4,12 @@ from typing import List, Tuple
 from sklearn.model_selection import KFold
 
 from datafc.repr.column import Column
-from datafc.syntactic.pattern import Pattern
-from datafc.syntactic.token import Token
-from datafc.transformation.operators import Operation, Constant
-from datafc.transformation.token_mapping import TokenMappingBaseModel
-from datafc.transformation.token_mapping.classifier import MultiBinary, MassMultiBinary
-from datafc.transformation.token_mapping.feature.column_sim import values_jaccard, syntactic_sim, text_cosine, \
+from datafc.syn.pattern import Pattern
+from datafc.syn.token import Token
+from datafc.trans.operators import Operation, Constant
+from datafc.trans.token_mapping import TokenMappingBaseModel
+from datafc.trans.token_mapping.classifier import MultiBinary, MassMultiBinary
+from datafc.trans.token_mapping.feature.column_sim import values_jaccard, syntactic_sim, text_cosine, \
     semantic_sim
 
 logger = logging.getLogger("myapp")

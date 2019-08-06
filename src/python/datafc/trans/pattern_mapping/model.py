@@ -4,11 +4,11 @@ from typing import Dict, Tuple, List
 
 import numpy as np
 
-from datafc.evaluation.validator import Validator
+from datafc.eval.validator import Validator
 from datafc.repr.column import Column
-from datafc.syntactic.pattern import PatternTree, PatternNode
-from datafc.transformation.token_mapping.token_attr import TokenAttrMappingModel
-from datafc.transformation.token_mapping.token_sim import TokenSimMappingModel
+from datafc.syn.pattern import PatternTree, PatternNode
+from datafc.trans.token_mapping.token_attr import TokenAttrMappingModel
+from datafc.trans.token_mapping.token_sim import TokenSimMappingModel
 
 logger = logging.getLogger("myapp")
 
