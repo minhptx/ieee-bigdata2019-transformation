@@ -35,6 +35,7 @@ class TopKTransformationResult:
     validation_tn_count: int = 0
     validation_fp_count: int = 0
     validation_fn_count: int = 0
+
     is_correct_transformation: int = 1
 
 
@@ -104,6 +105,9 @@ class Evaluator:
 
     def macro_mrr_score(self):
         return sum([self.mrr_score(name) for name in self.name_to_result]) / len(self.name_to_result)
+
+    def correct_transformation_ratio(self):
+        return sum([x.is_correct_transformation for x in self.name_to_result.values()]) * 1.0 / len(self.name_to_result)
 
     def validation_precision(self, name):
         result = self.name_to_result[name]
@@ -355,6 +359,7 @@ class Evaluator:
             "validation_r": self.mean_validation_recall(),
             "validation_f1": self.mean_validation_f1(),
             "mean_running_time": self.mean_running_time(),
+            "correct_transformations":  self.correct_transformation_ratio()
         }
 
         return report

@@ -167,9 +167,10 @@ class PatternMappingModel:
         scores_by_pattern = [[] for _ in range(len(final_node_to_results))]
         idx = 0
 
-
         for node, results in final_node_to_results.items():
-            self.validator.validate_results(results[0].original_target_pairs, target_tree)
+            self.validator.validate_results(
+                results[0].original_target_pairs, target_tree, results[0].score, results[1].score, best_level
+            )
 
             validated_original_to_transformed_tuples_by_pattern[idx] = []
             for idx1, result in enumerate(results):
@@ -183,8 +184,8 @@ class PatternMappingModel:
                     else:
                         current_score = 0
                         next_score = 0
-                    validation_result = self.validator.validate_result(
-                        (original_value, transformed_value), target_tree, current_score, next_score, best_level
+                    validation_result = self.validator.validate_results(
+                        [(original_value, transformed_value)], target_tree, current_score, next_score, best_level
                     )
                     if idx1 == 0:
                         validated_original_to_transformed_tuples_by_pattern[idx].append(
@@ -193,7 +194,7 @@ class PatternMappingModel:
                     else:
                         current_values = validated_original_to_transformed_tuples_by_pattern[idx][idx2][0]
                         assert (
-                                original_value == current_values
+                            original_value == current_values
                         ), f"Original value should be the same f{original_value} vs {current_values}"
                         validated_original_to_transformed_tuples_by_pattern[idx][idx2][1].append(transformed_value)
                         validated_original_to_transformed_tuples_by_pattern[idx][idx2][2].append(validation_result)
