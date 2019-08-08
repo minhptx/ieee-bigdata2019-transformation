@@ -7,6 +7,7 @@ import numpy as np
 from datafc.eval.validator import Validator
 from datafc.repr.column import Column
 from datafc.syn.pattern import PatternTree, PatternNode
+from datafc.trans.token_mapping import MultiBinary
 from datafc.trans.token_mapping.token_attr import TokenAttrMappingModel
 from datafc.trans.token_mapping.token_sim import TokenSimMappingModel
 
@@ -29,7 +30,7 @@ class PatternMappingModel:
             self.token_mapper: TokenSimMappingModel = TokenSimMappingModel(mapping_features)
         elif method == "attr":
             self.token_mapper: TokenAttrMappingModel = TokenAttrMappingModel()
-        self.validator: Validator = Validator(0.3)
+        self.validator: Validator = Validator(0.1)
 
     def learn(self, original_tree: PatternTree, target_tree: PatternTree):
         self.token_mapper.train_scoring_model(
@@ -146,6 +147,7 @@ class PatternMappingModel:
                 transformed_col.extend_values(list(value_tuples[1]))
 
             if self.mapping_method == "sim":
+                assert isinstance(self.token_mapper.scoring_model, MultiBinary)
                 pattern_score = self.token_mapper.scoring_model.predict_similarity(target_col, transformed_col)
             else:
                 pattern_score = np.mean(pattern_scores)
@@ -165,18 +167,24 @@ class PatternMappingModel:
         scores_by_pattern = [[] for _ in range(len(final_node_to_results))]
         idx = 0
 
+
         for node, results in final_node_to_results.items():
+            self.validator.validate_results(results[0].original_target_pairs, target_tree)
+
             validated_original_to_transformed_tuples_by_pattern[idx] = []
             for idx1, result in enumerate(results):
                 for idx2, (original_value, transformed_value) in enumerate(result.original_target_pairs):
                     if len(results) == 1:
-                        validation_score = 1
+                        current_score = 1
+                        next_score = 0
                     elif idx1 < len(results) - 1:
-                        validation_score = result.score - results[idx1 + 1].score
+                        current_score = result.score
+                        next_score = results[idx1 + 1].score
                     else:
-                        validation_score = 0
+                        current_score = 0
+                        next_score = 0
                     validation_result = self.validator.validate_result(
-                        transformed_value, original_tree, target_tree, validation_score, best_level
+                        (original_value, transformed_value), target_tree, current_score, next_score, best_level
                     )
                     if idx1 == 0:
                         validated_original_to_transformed_tuples_by_pattern[idx].append(
@@ -185,7 +193,7 @@ class PatternMappingModel:
                     else:
                         current_values = validated_original_to_transformed_tuples_by_pattern[idx][idx2][0]
                         assert (
-                            original_value == current_values
+                                original_value == current_values
                         ), f"Original value should be the same f{original_value} vs {current_values}"
                         validated_original_to_transformed_tuples_by_pattern[idx][idx2][1].append(transformed_value)
                         validated_original_to_transformed_tuples_by_pattern[idx][idx2][2].append(validation_result)
@@ -194,9 +202,3 @@ class PatternMappingModel:
             idx += 1
 
         return validated_original_to_transformed_tuples_by_pattern, scores_by_pattern
-
-    # def learn_and_flashfill(self, original_tree: PatternTree, target_tree: PatternTree):
-    #     self.token_mapper.train_scoring_model(
-    #         original_tree.get_patterns_by_layers([1, 2, 3, 4], in_groups=True)
-    #         + target_tree.get_patterns_by_layers([1, 2, 3, 4], in_groups=True)
-    #     )

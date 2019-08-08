@@ -27,7 +27,7 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: INFO
     formatter: simple
-    filename: log/info.log
+    filename: C:\Users\Clapika\Projects\python-data-transform\log\info.log
     maxBytes: 10485760 # 10MB
     backupCount: 1
     encoding: utf8
@@ -36,7 +36,7 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: DEBUG
     formatter: simple
-    filename: log/debug.log
+    filename: C:\Users\Clapika\Projects\python-data-transform\log\debug.log
     maxBytes: 10485760 # 10MB
     backupCount: 1
     encoding: utf8
@@ -45,7 +45,7 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: ERROR
     formatter: error
-    filename: log/errors.log
+    filename: C:\Users\Clapika\Projects\python-data-transform\log\errors.log
     maxBytes: 10485760 # 10MB
     backupCount: 1
     encoding: utf8
