@@ -1,3 +1,4 @@
+import json
 import logging
 import time
 from collections import defaultdict
@@ -38,6 +39,8 @@ class TopKTransformationResult:
 
     is_correct_transformation: int = 1
 
+    validation_result: str = "TP"
+
 
 class Evaluator:
     def __init__(self, mapping_method="sim", mapping_features=None, with_flashfill=False, k=10):
@@ -59,9 +62,9 @@ class Evaluator:
 
     def micro_active_accuracy(self, name, step):
         return (
-            self.name_to_active_result[name][step].correct_count
-            * 1.0
-            / self.name_to_active_result[name][step].total_count
+                self.name_to_active_result[name][step].correct_count
+                * 1.0
+                / self.name_to_active_result[name][step].total_count
         )
 
     def micro_top_k_accuracy(self, name):
@@ -75,9 +78,9 @@ class Evaluator:
 
     def micro_mean_accuracy(self):
         return (
-            sum([x.correct_count for x in self.name_to_result.values()])
-            * 1.0
-            / sum([x.total_count for x in self.name_to_result.values()])
+                sum([x.correct_count for x in self.name_to_result.values()])
+                * 1.0
+                / sum([x.total_count for x in self.name_to_result.values()])
         )
 
     def macro_mean_accuracy(self):
@@ -88,9 +91,9 @@ class Evaluator:
 
     def micro_mean_top_k_accuracy(self):
         return (
-            sum([x.top_k_correct_count for x in self.name_to_result.values()])
-            * 1.0
-            / sum([x.total_count for x in self.name_to_result.values()])
+                sum([x.top_k_correct_count for x in self.name_to_result.values()])
+                * 1.0
+                / sum([x.total_count for x in self.name_to_result.values()])
         )
 
     def macro_mean_top_k_accuracy(self):
@@ -98,16 +101,16 @@ class Evaluator:
 
     def micro_mrr_score(self):
         return (
-            sum([x.mrr_count for x in self.name_to_result.values()])
-            * 1.0
-            / sum([x.total_count for x in self.name_to_result.values()])
+                sum([x.mrr_count for x in self.name_to_result.values()])
+                * 1.0
+                / sum([x.total_count for x in self.name_to_result.values()])
         )
 
     def macro_mrr_score(self):
         return sum([self.mrr_score(name) for name in self.name_to_result]) / len(self.name_to_result)
 
-    def correct_transformation_ratio(self):
-        return sum([x.is_correct_transformation for x in self.name_to_result.values()]) * 1.0 / len(self.name_to_result)
+    def num_correct_transformations(self):
+        return sum([x.is_correct_transformation for x in self.name_to_result.values()]) * 1.0
 
     def validation_precision(self, name):
         result = self.name_to_result[name]
@@ -135,12 +138,42 @@ class Evaluator:
         except ZeroDivisionError:
             return 0
 
+    def scenario_valid_p(self):
+        try:
+            return len(
+                [x.validation_result for x in self.name_to_result.values() if x.validation_result == "TP"]) * 1.0 / len(
+                [x.validation_result for x in self.name_to_result.values() if x.validation_result in ["TP", "FP"]])
+        except ZeroDivisionError:
+            if len([x.validation_result for x in self.name_to_result.values() if
+                    x.validation_result in ["TP", "FP", "FN"]]) == 0:
+                return 1
+            return 0
+
+    def scenario_valid_r(self):
+        try:
+            return len(
+                [x.validation_result for x in self.name_to_result.values() if x.validation_result == "TP"]) * 1.0 / len(
+                [x.validation_result for x in self.name_to_result.values() if x.validation_result in ["TP", "FN"]])
+        except ZeroDivisionError:
+            if len([x.validation_result for x in self.name_to_result.values() if
+                    x.validation_result in ["TP", "FN"]]) == 0:
+                return 1
+            return 0
+
+    def scenario_valid_f1(self):
+        precision = self.scenario_valid_p()
+        recall = self.scenario_valid_r()
+        try:
+            return (2 * precision * recall) / (precision + recall)
+        except ZeroDivisionError:
+            return 0
+
     def mean_validation_precision(self):
         try:
             return (
-                sum([x.validation_tp_count for x in self.name_to_result.values()])
-                * 1.0
-                / sum([x.validation_tp_count + x.validation_fp_count for x in self.name_to_result.values()])
+                    sum([x.validation_tp_count for x in self.name_to_result.values()])
+                    * 1.0
+                    / sum([x.validation_tp_count + x.validation_fp_count for x in self.name_to_result.values()])
             )
         except ZeroDivisionError:
             return 0
@@ -148,9 +181,9 @@ class Evaluator:
     def mean_validation_recall(self):
         try:
             return (
-                sum([x.validation_tp_count for x in self.name_to_result.values()])
-                * 1.0
-                / sum([x.validation_tp_count + x.validation_fn_count for x in self.name_to_result.values()])
+                    sum([x.validation_tp_count for x in self.name_to_result.values()])
+                    * 1.0
+                    / sum([x.validation_tp_count + x.validation_fn_count for x in self.name_to_result.values()])
             )
         except ZeroDivisionError:
             return 0
@@ -187,38 +220,13 @@ class Evaluator:
                 example = Example(original_value, groundtruth_value, transformed_values, result, validation_result[1:])
                 self.name_to_result[name].top_k_failed_validations.append(example)
 
-        return result
-
-    def check_transformation_result(
-        self,
-        name: str,
-        original_to_groundtruth_values: Dict[str, str],
-        original_to_transformed_values: List[Tuple[str, List[str]]],
-    ):
-        logger.debug("Original to groundtruth %s" % original_to_groundtruth_values)
-        logger.debug("Original to transformed %s" % original_to_transformed_values)
-
-        for (original_value, transformed_value, validated_result) in original_to_transformed_values:
-            self.name_to_result[name].total_count += 1
-
-            validation_result = self.check_validation_result(
-                name,
-                original_value,
-                original_to_groundtruth_values[original_value],
-                transformed_value,
-                validated_result,
-            )
-
-            if transformed_value == original_to_groundtruth_values[original_value]:
-                self.name_to_result[name].correct_count += 1
-            else:
-                self.name_to_result[name].is_correct_transformation = 0
+        return result, validation_result[1:]
 
     def check_top_k_transformation_result(
-        self,
-        name: Union[str, Tuple[str, int]],
-        original_to_groundtruth_values: Dict[str, str],
-        original_to_k_transformed_values: List[Tuple[str, List[str], List[bool]]],
+            self,
+            name: Union[str, Tuple[str, int]],
+            original_to_groundtruth_values: Dict[str, str],
+            original_to_k_transformed_values: List[Tuple[str, List[str], List[bool]]],
     ):
         assert isinstance(name, str), "Nonactive learning result requires name as string"
         tran_result = self.name_to_result[name]
@@ -227,7 +235,7 @@ class Evaluator:
             tran_result.total_count += 1
             transformed_values = transformed_values[: self.k]
 
-            validation_result = self.check_validation_result(
+            validation_result, reasons = self.check_validation_result(
                 name,
                 original_value,
                 original_to_groundtruth_values[original_value],
@@ -240,12 +248,14 @@ class Evaluator:
                 tran_result.top_k_correct_count += 1
                 tran_result.mrr_count += 1
             else:
+                tran_result.is_correct_transformation = 0
+
                 example = Example(
                     original_value,
                     original_to_groundtruth_values[original_value],
                     transformed_values,
                     validation_result,
-                    [True, True]
+                    reasons
                 )
                 tran_result.top_k_failed_cases.append(example)
                 logger.debug(
@@ -259,11 +269,9 @@ class Evaluator:
                 if correct_rank != -1:
                     tran_result.mrr_count += 1.0 / (correct_rank + 1)
                     tran_result.top_k_correct_count += 1
-                else:
-                    tran_result.is_correct_transformation = 0
 
     def run_flashfill_experiment(
-        self, name, original_values: List[str], transformed_values: List[str], groundtruth_values: List[str]
+            self, name, original_values: List[str], transformed_values: List[str], groundtruth_values: List[str]
     ):
         self.name_to_result[name] = TopKTransformationResult()
 
@@ -271,42 +279,16 @@ class Evaluator:
         original_to_transformed_values: List[Tuple[str, List[str], List[bool]]] = []
 
         for original_value, transformed_value, groundtruth_value in zip(
-            original_values, transformed_values, groundtruth_values
+                original_values, transformed_values, groundtruth_values
         ):
             original_to_groundtruth_values[original_value] = groundtruth_value
             original_to_transformed_values.append((original_value, [transformed_value], [True]))
 
         self.check_top_k_transformation_result(name, original_to_groundtruth_values, original_to_transformed_values)
 
-    def run_normal_experiment(
-        self, name: str, original_values: List[str], target_values: List[str], groundtruth_values: List[str]
-    ):
-
-        self.name_to_result[name] = TopKTransformationResult()
-
-        original_to_groundtruth_values: Dict[str, str] = {}
-
-        for index, value in enumerate(original_values):
-            original_to_groundtruth_values[value] = groundtruth_values[index]
-
-        starting_time = time.time()
-
-        transformation_model = TransformationModel(self.mapping_method, self.mapping_features)
-        validated_original_to_transformed_values, scores = transformation_model.learn(original_values, target_values)
-
-        self.name_to_result[name].running_time = time.time() - starting_time
-
-        assert len(original_values) == len(validated_original_to_transformed_values), (
-            f"Dataset sizes before and after transformation "
-            f"should be the same ({len(original_values)} vs {len(validated_original_to_transformed_values)}) "
-        )
-
-        self.check_transformation_result(name, original_to_groundtruth_values, validated_original_to_transformed_values)
-
     def run_top_k_experiment(
-        self, name: str, original_values: List[str], target_values: List[str], groundtruth_values: List[str], k: int
+            self, name: str, original_values: List[str], target_values: List[str], groundtruth_values: List[str], k: int
     ):
-
         self.name_to_result[name] = TopKTransformationResult()
 
         original_to_groundtruth_values: Dict[str, str] = {}
@@ -318,7 +300,7 @@ class Evaluator:
 
         transformation_model = TransformationModel(self.mapping_method, self.mapping_features)
 
-        validated_original_to_k_transformed_values, scores = transformation_model.learn_top_k(
+        validated_original_to_k_transformed_values, scores, full_validation = transformation_model.learn_top_k(
             original_values, target_values, k
         )
 
@@ -332,6 +314,17 @@ class Evaluator:
             name, original_to_groundtruth_values, validated_original_to_k_transformed_values
         )
 
+        if self.name_to_result[name].is_correct_transformation:
+            if full_validation:
+                self.name_to_result[name].validation_result = "FP"
+            else:
+                self.name_to_result[name].validation_result = "TN"
+        else:
+            if full_validation:
+                self.name_to_result[name].validation_result = "TP"
+            else:
+                self.name_to_result[name].validation_result = "FN"
+
     def generate_scenario_report(self, name):
         report = {
             "name": name,
@@ -341,9 +334,10 @@ class Evaluator:
             "validation_p": self.validation_precision(name),
             "validation_r": self.validation_recall(name),
             "validation_f1": self.validation_f1(name),
+            "validation_result": self.name_to_result[name].validation_result,
             "running_time": self.name_to_result[name].running_time,
-            "failed_transformation": self.name_to_result[name].top_k_failed_cases,
-            "failed_validation": self.name_to_result[name].top_k_failed_validations,
+            "failed_transformations": self.name_to_result[name].top_k_failed_cases[:100],
+            "failed_validations": self.name_to_result[name].top_k_failed_validations[:100],
         }
 
         return report
@@ -351,15 +345,27 @@ class Evaluator:
     def generate_dataset_report(self, name):
         report = {
             "name": name,
+            "num_scenarios": len(self.name_to_result),
+            "num_correct": self.num_correct_transformations(),
+            "num_0.9_correct": len(
+                [x for x in self.name_to_result.values() if 0.9 < x.correct_count * 1.0 / x.total_count <1.0]),
+            "num_lt_10_wrong": len(
+                [x for x in self.name_to_result.values() if x.correct_count + 10 > x.total_count]),
             "macro_mean_acc": self.macro_mean_accuracy(),
             "micro_mean_acc": self.micro_mean_accuracy(),
             "macro_top_k_acc": self.macro_mean_top_k_accuracy(),
             "micro_top_k_acc": self.micro_mean_top_k_accuracy(),
-            "validation_p": self.mean_validation_precision(),
-            "validation_r": self.mean_validation_recall(),
-            "validation_f1": self.mean_validation_f1(),
+            "example_valid_p": self.mean_validation_precision(),
+            "example_valid_r": self.mean_validation_recall(),
+            "example_valid_f1": self.mean_validation_f1(),
             "mean_running_time": self.mean_running_time(),
-            "correct_transformations":  self.correct_transformation_ratio()
+            "s_valid_p": self.scenario_valid_p(),
+            "s_valid_r": self.scenario_valid_r(),
+            "s_valid_f1": self.scenario_valid_f1(),
+            "s_valid_fn": len([x for x in self.name_to_result.values() if x.validation_result == "FN"]),
+            "s_valid_fp": len([x for x in self.name_to_result.values() if x.validation_result == "FP"]),
+            "s_valid_tn": len([x for x in self.name_to_result.values() if x.validation_result == "TN"]),
+            "s_valid_tp": len([x for x in self.name_to_result.values() if x.validation_result == "TP"])
         }
 
         return report
@@ -391,7 +397,7 @@ class Evaluator:
     def run_dataset(self, dataset_folder):
         scenario_to_report = {}
 
-        for scenario_folder in dataset_folder.iterdir():
+        for scenario_folder in list(dataset_folder.iterdir())[:150]:
             scenario_report = self.run_scenario(scenario_folder)
             scenario_to_report[scenario_folder.name] = scenario_report
 

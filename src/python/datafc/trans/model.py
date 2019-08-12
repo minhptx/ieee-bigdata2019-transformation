@@ -29,13 +29,12 @@ class TransformationModel:
             original_tree, transformed_tree, k
         )
 
-
         return original_to_transformed_pairs_by_pattern, scores_by_pattern
 
     def learn_top_k(self, original_values: List[str], transformed_values: List[str], k: int):
         original_tree, transformed_tree = self.generate_patterns(original_values, transformed_values)
 
-        original_to_transformed_pairs_by_pattern, scores_by_pattern = self.pattern_mapper.learn_top_k(
+        original_to_transformed_pairs_by_pattern, scores_by_pattern, full_validation_result = self.pattern_mapper.learn_top_k(
             original_tree, transformed_tree, k
         )
 
@@ -45,7 +44,7 @@ class TransformationModel:
             for result in original_to_transformed_pairs:
                 original_to_transformed_results.append(result)
 
-        return original_to_transformed_results, scores_by_pattern
+        return original_to_transformed_results, scores_by_pattern, full_validation_result
 
     def learn(self, original_values: List[str], transformed_values: List[str]):
         original_tree, transformed_tree = self.generate_patterns(original_values, transformed_values)

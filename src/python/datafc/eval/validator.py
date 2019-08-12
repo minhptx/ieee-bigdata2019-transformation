@@ -9,13 +9,13 @@ class Validator:
 
     def validate_results(
         self,
-        original_transformed_pair: List[Tuple[str, str]],
+        original_transformed_pairs: List[Tuple[str, str]],
         target_tree: PatternTree,
         score: float,
         next_score: float,
         level: int,
     ):
-        pattern_tree = PatternTree.build_from_strings([original_transformed_pair[1]])
+        pattern_tree = PatternTree.build_from_strings([x[1] for x in original_transformed_pairs])
 
         is_syntactic = set(pattern_tree.get_patterns_by_layers([level])).issubset(
             set(target_tree.get_patterns_by_layers([level]))
