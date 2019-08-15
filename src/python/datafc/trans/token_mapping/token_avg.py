@@ -19,7 +19,8 @@ class TokenAvgMappingModel(TokenMappingBaseModel):
         transformed_column = Column(values=operation.transform())
         target_column = Column(values=operation.target_token.values)
         return (
-            values_jaccard(transformed_column, target_column) + syntactic_sim(transformed_column, target_column)
+            values_jaccard(transformed_column, target_column)
+            + syntactic_sim(transformed_column, target_column)
         ) / 2.0
 
     def generate_candidate_functions(self, source_token: Token, target_token: Token):
@@ -27,7 +28,9 @@ class TokenAvgMappingModel(TokenMappingBaseModel):
             return max(
                 {
                     op: self.score_operation(op)
-                    for op in Operation.find_suitable_transformations(source_token, target_token)
+                    for op in Operation.find_suitable_transformations(
+                        source_token, target_token
+                    )
                 }.items(),
                 key=lambda x: x[1],
             )

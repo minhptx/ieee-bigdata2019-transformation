@@ -23,16 +23,24 @@ class TransformationModel:
 
         return original_tree, transformed_tree
 
-    def learn_top_k_active(self, original_values: List[str], transformed_values: List[str], k: int):
-        original_tree, transformed_tree = self.generate_patterns(original_values, transformed_values)
+    def learn_top_k_active(
+        self, original_values: List[str], transformed_values: List[str], k: int
+    ):
+        original_tree, transformed_tree = self.generate_patterns(
+            original_values, transformed_values
+        )
         original_to_transformed_pairs_by_pattern, scores_by_pattern = self.pattern_mapper.learn_top_k(
             original_tree, transformed_tree, k
         )
 
         return original_to_transformed_pairs_by_pattern, scores_by_pattern
 
-    def learn_top_k(self, original_values: List[str], transformed_values: List[str], k: int):
-        original_tree, transformed_tree = self.generate_patterns(original_values, transformed_values)
+    def learn_top_k(
+        self, original_values: List[str], transformed_values: List[str], k: int
+    ):
+        original_tree, transformed_tree = self.generate_patterns(
+            original_values, transformed_values
+        )
 
         original_to_transformed_pairs_by_pattern, scores_by_pattern, full_validation_result = self.pattern_mapper.learn_top_k(
             original_tree, transformed_tree, k
@@ -44,11 +52,19 @@ class TransformationModel:
             for result in original_to_transformed_pairs:
                 original_to_transformed_results.append(result)
 
-        return original_to_transformed_results, scores_by_pattern, full_validation_result
+        return (
+            original_to_transformed_results,
+            scores_by_pattern,
+            full_validation_result,
+        )
 
     def learn(self, original_values: List[str], transformed_values: List[str]):
-        original_tree, transformed_tree = self.generate_patterns(original_values, transformed_values)
+        original_tree, transformed_tree = self.generate_patterns(
+            original_values, transformed_values
+        )
 
-        original_to_transformed_tuples, score = self.pattern_mapper.learn(original_tree, transformed_tree)
+        original_to_transformed_tuples, score = self.pattern_mapper.learn(
+            original_tree, transformed_tree
+        )
 
         return original_to_transformed_tuples, score

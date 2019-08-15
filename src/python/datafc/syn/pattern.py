@@ -4,7 +4,16 @@ from typing import List, Dict, Optional
 import regex as re
 
 from datafc.repr.column import Column
-from datafc.syn.token import Token, Uppercase, Lowercase, Alphabet, Digit, Alphanum, Whitespace, Alnumspace
+from datafc.syn.token import (
+    Token,
+    Uppercase,
+    Lowercase,
+    Alphabet,
+    Digit,
+    Alphanum,
+    Whitespace,
+    Alnumspace,
+)
 
 
 class Pattern:
@@ -89,7 +98,8 @@ class Pattern:
             while run_idx < len(tokens):
                 if tokens[run_idx].token_type == tokens[idx].token_type:
                     tokens[idx].values = [
-                        value + tokens[run_idx].values[i] for i, value in enumerate(tokens[idx].values)
+                        value + tokens[run_idx].values[i]
+                        for i, value in enumerate(tokens[idx].values)
                     ]
                     removed_indices.append(run_idx)
                     run_idx += 1
@@ -128,10 +138,14 @@ class PatternTree:
 
     def get_patterns_by_layers(self, layers, in_groups=False):
         if in_groups:
-            return [[node.value for node in self.node_in_layers[layer]] for layer in layers]
+            return [
+                [node.value for node in self.node_in_layers[layer]] for layer in layers
+            ]
         return [
             pattern_node.value
-            for pattern_node in reduce(list.__add__, [self.node_in_layers[layer] for layer in layers], [])
+            for pattern_node in reduce(
+                list.__add__, [self.node_in_layers[layer] for layer in layers], []
+            )
         ]
 
     @staticmethod
@@ -142,7 +156,9 @@ class PatternTree:
             for str_value in str_values:
                 pattern = Pattern.build_from_string(str_value.strip(), layer)
                 if pattern in pattern_tree.pattern_to_node:
-                    pattern_tree.pattern_to_node[pattern].value = pattern_tree.pattern_to_node[pattern].value.combine(
+                    pattern_tree.pattern_to_node[
+                        pattern
+                    ].value = pattern_tree.pattern_to_node[pattern].value.combine(
                         pattern
                     )
                 else:

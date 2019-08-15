@@ -43,7 +43,9 @@ def numeric_ks(col1: Column, col2: Column) -> float:
 
 
 def histogram_nmi(col1: Column, col2: Column) -> float:
-    word_to_idx = {word: idx for idx, word in enumerate(list(set(col1.values + col2.values)))}
+    word_to_idx = {
+        word: idx for idx, word in enumerate(list(set(col1.values + col2.values)))
+    }
     indices1 = [word_to_idx[value] for value in col1.values]
     indices2 = [word_to_idx[value] for value in col2.values]
 
@@ -76,13 +78,23 @@ def length_syntactic_sim(col1: Column, col2: Column) -> float:
     token_lists1 = []
     for str_value in col1.values:
         token_lists1.append(
-            " ".join(["%s(%s)" % (x.token_type.name, x.length) for x in Token.get_basic_pattern(str_value)])
+            " ".join(
+                [
+                    "%s(%s)" % (x.token_type.name, x.length)
+                    for x in Token.get_basic_pattern(str_value)
+                ]
+            )
         )
 
     token_lists2 = []
     for str_value in col2.values:
         token_lists2.append(
-            " ".join(["%s(%s)" % (x.token_type.name, x.length) for x in Token.get_basic_pattern(str_value)])
+            " ".join(
+                [
+                    "%s(%s)" % (x.token_type.name, x.length)
+                    for x in Token.get_basic_pattern(str_value)
+                ]
+            )
         )
 
     return jaccard(token_lists1, token_lists2)

@@ -27,23 +27,33 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
     def generate_candidate_functions(self, source_token: Token, target_token: Token):
         pass
 
-    def generate_token_mappings(self, original_pattern: Pattern, target_pattern: Pattern):
+    def generate_token_mappings(
+        self, original_pattern: Pattern, target_pattern: Pattern
+    ):
         assert original_pattern.tokens, "Original pattern cannot be empty"
         assert target_pattern.tokens, "Target pattern cannot be empty"
 
-        token_pair_to_score = np.zeros((len(target_pattern.tokens), len(original_pattern.tokens)))
-        token_pair_to_operation = np.empty((len(target_pattern.tokens), len(original_pattern.tokens)), dtype=object)
+        token_pair_to_score = np.zeros(
+            (len(target_pattern.tokens), len(original_pattern.tokens))
+        )
+        token_pair_to_operation = np.empty(
+            (len(target_pattern.tokens), len(original_pattern.tokens)), dtype=object
+        )
 
         for idx1, target_token in enumerate(target_pattern.tokens):
             for idx2, original_token in enumerate(original_pattern.tokens):
-                operation, score = self.generate_candidate_functions(original_token, target_token)
+                operation, score = self.generate_candidate_functions(
+                    original_token, target_token
+                )
                 token_pair_to_operation[idx1][idx2] = operation
                 token_pair_to_score[idx1][idx2] = score
 
         return token_pair_to_score, token_pair_to_operation
 
     @staticmethod
-    def find_best_mapping(token_pair_to_score, token_pair_to_operation) -> Tuple[float, Dict[int, Operation]]:
+    def find_best_mapping(
+        token_pair_to_score, token_pair_to_operation
+    ) -> Tuple[float, Dict[int, Operation]]:
 
         index_to_operation = {}
         constant_indices = []
@@ -65,9 +75,14 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
 
         for target_idx, original_idx in zip(row_indices, col_indices):
             pre_delete_index = post_delete_mapping[target_idx]
-            index_to_operation[pre_delete_index] = token_pair_to_operation[pre_delete_index][original_idx]
+            index_to_operation[pre_delete_index] = token_pair_to_operation[
+                pre_delete_index
+            ][original_idx]
 
-        return score_matrix[row_indices, col_indices].sum() / len(row_indices), index_to_operation
+        return (
+            score_matrix[row_indices, col_indices].sum() / len(row_indices),
+            index_to_operation,
+        )
 
     @staticmethod
     def find_best_k_ambiguous_mappings(
@@ -81,10 +96,24 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
         ambiguous_choices = []
 
         logger.debug("Token to token operation:")
-        logger.debug("\n" + tabulate(token_pair_to_operation, range(len(token_pair_to_score)), tablefmt="fancy_grid"))
+        logger.debug(
+            "\n"
+            + tabulate(
+                token_pair_to_operation,
+                range(len(token_pair_to_score)),
+                tablefmt="fancy_grid",
+            )
+        )
 
         logger.debug("Token to token score:")
-        logger.debug("\n" + tabulate(token_pair_to_score, range(len(token_pair_to_score)), tablefmt="fancy_grid"))
+        logger.debug(
+            "\n"
+            + tabulate(
+                token_pair_to_score,
+                range(len(token_pair_to_score)),
+                tablefmt="fancy_grid",
+            )
+        )
 
         for idx1 in range(token_pair_to_operation.shape[0]):
             max_value = np.max(token_pair_to_score[idx1])
@@ -93,11 +122,7 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
                     constant_indices.append(idx1)
                     break
                 ambiguous_choices.append(
-                    (
-                        idx1,
-                        idx2,
-                        max_value - token_pair_to_score[idx1][idx2],
-                    )
+                    (idx1, idx2, max_value - token_pair_to_score[idx1][idx2])
                 )
             else:
                 pre_to_post_index[idx1] = len(pre_to_post_index)
@@ -105,7 +130,7 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
 
         possible_matches_by_rows = [[] for _ in range(len(post_to_pre_index))]
 
-        for idx1, idx2, _ in sorted(ambiguous_choices, key=lambda x: x[2])[:k * 2]:
+        for idx1, idx2, _ in sorted(ambiguous_choices, key=lambda x: x[2])[: k * 2]:
             possible_matches_by_rows[pre_to_post_index[idx1]].append(idx2)
 
         candidate_mappings = list(itertools.product(*possible_matches_by_rows))
@@ -121,14 +146,16 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
                 operations[idx1] = token_pair_to_operation[idx1][0]
 
             for idx1, idx2 in enumerate(list(possible_mapping)):
-                operations[post_to_pre_index[idx1]] = token_pair_to_operation[post_to_pre_index[idx1]][idx2]
+                operations[post_to_pre_index[idx1]] = token_pair_to_operation[
+                    post_to_pre_index[idx1]
+                ][idx2]
 
                 score += token_pair_to_score[post_to_pre_index[idx1]][idx2]
             mappings_with_scores.append((operations, score))
 
         mappings_with_scores.sort(key=lambda x: x[1], reverse=True)
         if mappings_with_scores:
-            operations, scores = zip(*mappings_with_scores[:k * 2])
+            operations, scores = zip(*mappings_with_scores[: k * 2])
             return list(scores), list(operations)
         return [0], [{}]
 
@@ -141,24 +168,42 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
         original_to_transformed_pairs = []
 
         for idx, target_string in enumerate(original_pattern.values):
-            target_string = "".join([transformed_strings[idx] for transformed_strings in token_transformed_values])
-            original_to_transformed_pairs.append((original_pattern.values[idx], target_string))
+            target_string = "".join(
+                [
+                    transformed_strings[idx]
+                    for transformed_strings in token_transformed_values
+                ]
+            )
+            original_to_transformed_pairs.append(
+                (original_pattern.values[idx], target_string)
+            )
 
         return original_to_transformed_pairs
 
-    def learn(self, original_pattern: Pattern, target_pattern: Pattern) -> Tuple[List[Tuple[str, str]], float]:
+    def learn(
+        self, original_pattern: Pattern, target_pattern: Pattern
+    ) -> Tuple[List[Tuple[str, str]], float]:
 
-        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(original_pattern, target_pattern)
+        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(
+            original_pattern, target_pattern
+        )
 
         transformation_score, token_to_operation = TokenMappingBaseModel.find_best_mapping(
             token_pair_to_score, token_pair_to_operation
         )
 
-        if None in token_to_operation.values() or len(target_pattern.tokens) != len(token_to_operation):
-            return [(original_value, "") for original_value in original_pattern.values], 0
+        if None in token_to_operation.values() or len(target_pattern.tokens) != len(
+            token_to_operation
+        ):
+            return (
+                [(original_value, "") for original_value in original_pattern.values],
+                0,
+            )
 
         return (
-            self.generate_output_strings(original_pattern, target_pattern, token_to_operation),
+            self.generate_output_strings(
+                original_pattern, target_pattern, token_to_operation
+            ),
             transformation_score,
         )
 
@@ -169,7 +214,9 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
         scores = []
         original_to_target_pairs_list = []
 
-        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(original_pattern, target_pattern)
+        token_pair_to_score, token_pair_to_operation = self.generate_token_mappings(
+            original_pattern, target_pattern
+        )
 
         logger.debug("Original pattern: %s" % original_pattern.tokens)
         logger.debug("Target pattern: %s" % target_pattern.tokens)
@@ -178,8 +225,12 @@ class TokenMappingBaseModel(metaclass=ABCMeta):
             token_pair_to_score, token_pair_to_operation, k
         )
 
-        for transformation_score, token_to_operation in zip(transformation_scores, token_to_operation_list):
-            if None in token_to_operation.values() or len(target_pattern.tokens) != len(token_to_operation):
+        for transformation_score, token_to_operation in zip(
+            transformation_scores, token_to_operation_list
+        ):
+            if None in token_to_operation.values() or len(target_pattern.tokens) != len(
+                token_to_operation
+            ):
                 scores.append(0)
                 original_to_target_pairs_list.append(
                     [(original_value, "") for original_value in original_pattern.values]

@@ -15,7 +15,9 @@ class Validator:
         next_score: float,
         level: int,
     ):
-        pattern_tree = PatternTree.build_from_strings([x[1] for x in original_transformed_pairs])
+        pattern_tree = PatternTree.build_from_strings(
+            [x[1] for x in original_transformed_pairs]
+        )
 
         is_syntactic = set(pattern_tree.get_patterns_by_layers([level])).issubset(
             set(target_tree.get_patterns_by_layers([level]))

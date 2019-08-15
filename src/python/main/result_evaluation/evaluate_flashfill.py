@@ -32,7 +32,9 @@ for input_file in input_data_path.iterdir():
     for line in csv_reader:
         groundtruth_values.append(line[0])
 
-    evaluator.run_flashfill_experiment(input_file.name, original_values, transformed_values, groundtruth_values)
+    evaluator.run_flashfill_experiment(
+        input_file.name, original_values, transformed_values, groundtruth_values
+    )
     evaluator.generate_scenario_report(input_file.name, 10)
 
 evaluator.generate_dataset_report(dataset, 10)

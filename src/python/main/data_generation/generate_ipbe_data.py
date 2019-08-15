@@ -19,7 +19,9 @@ for dataset in Path("data").iterdir():
         input_data_path = Path("ipbe") / dataset.name / f"{sub_folder.name}.csv"
 
         input_values = input_file.open("r", encoding="utf-8").readlines()[:1000]
-        groundtruth_values = groundtruth_file.open("r", encoding="utf-8").readlines()[:1000]
+        groundtruth_values = groundtruth_file.open("r", encoding="utf-8").readlines()[
+            :1000
+        ]
 
         with input_data_path.open("w", encoding="utf-8") as input_writer:
             for index in range(len(input_values)):

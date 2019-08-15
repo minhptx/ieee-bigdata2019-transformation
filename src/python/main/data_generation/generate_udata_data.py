@@ -27,7 +27,9 @@ def convert_new_structure(folder_path):
             new_folder_path.mkdir(parents=True, exist_ok=True)
 
             shutil.copy(str(input_raw_path), str(new_folder_path / "input.csv"))
-            shutil.copy(str(transformed_raw_path), str(new_folder_path / "transformed.csv"))
+            shutil.copy(
+                str(transformed_raw_path), str(new_folder_path / "transformed.csv")
+            )
             shutil.copy(str(groundtruth_path), str(new_folder_path / "groundtruth.csv"))
 
 

@@ -6,7 +6,9 @@ import regex as re
 
 
 class Token:
-    def __init__(self, token_type: "TokenType", position: int, length: int, values=None):
+    def __init__(
+        self, token_type: "TokenType", position: int, length: int, values=None
+    ):
         if values is None:
             values = []
         self.token_type: TokenType = token_type
@@ -21,16 +23,27 @@ class Token:
         return f"TokenData({self.token_type.name}, {self.position}, {self.length})"
 
     def __eq__(self, token_data: "Token") -> bool:
-        if self.token_type == token_data.token_type and self.length == token_data.length:
+        if (
+            self.token_type == token_data.token_type
+            and self.length == token_data.length
+        ):
             return True
         return False
 
     def is_matched(self, token_data: "Token") -> bool:
-        return self.token_type == token_data.token_type and self.length == token_data.length
+        return (
+            self.token_type == token_data.token_type
+            and self.length == token_data.length
+        )
 
     def combine(self, token_data: "Token") -> Optional["Token"]:
         if self.is_matched(token_data):
-            return Token(self.token_type, self.position, self.length, self.values + token_data.values)
+            return Token(
+                self.token_type,
+                self.position,
+                self.length,
+                self.values + token_data.values,
+            )
         return None
 
     @staticmethod
@@ -42,9 +55,18 @@ class Token:
                 match_result = re.match("^" + regex_type.regex, str_value)
                 if match_result:
                     if level == 0:
-                        masked_data.append(Token(regex_type, -1, len(match_result.group()), [match_result.group()]))
+                        masked_data.append(
+                            Token(
+                                regex_type,
+                                -1,
+                                len(match_result.group()),
+                                [match_result.group()],
+                            )
+                        )
                     else:
-                        masked_data.append(Token(regex_type, -1, -1, [match_result.group()]))
+                        masked_data.append(
+                            Token(regex_type, -1, -1, [match_result.group()])
+                        )
                     str_value = str_value[len(match_result.group()) :]
                     break
         return masked_data
@@ -56,7 +78,14 @@ class Token:
             for regex_type in BASIC_TYPES:
                 match_result = re.match("^" + regex_type.regex, str_value)
                 if match_result:
-                    masked_data.append(Token(regex_type, -1, len(match_result.group()), [match_result.group()]))
+                    masked_data.append(
+                        Token(
+                            regex_type,
+                            -1,
+                            len(match_result.group()),
+                            [match_result.group()],
+                        )
+                    )
                     str_value = str_value[len(match_result.group()) :]
                     break
         return masked_data
@@ -135,14 +164,22 @@ class TokenType:
         return [match.span() for match in re.findall(token_type.regex, str_value)]
 
     @staticmethod
-    def find_all_tokens_of_type(token_type: "TokenType", str_value: str) -> List[Tuple[int, int, Token]]:
+    def find_all_tokens_of_type(
+        token_type: "TokenType", str_value: str
+    ) -> List[Tuple[int, int, Token]]:
         return [
-            (match.start(), match.end(), Token(token_type, index, match.end() - match.start(), [match.group(0)]))
+            (
+                match.start(),
+                match.end(),
+                Token(token_type, index, match.end() - match.start(), [match.group(0)]),
+            )
             for index, match in enumerate(re.finditer(token_type.regex, str_value))
         ]
 
     @staticmethod
-    def find_all_tokens_of_types(token_types: List["TokenType"], str_value: str) -> List[Tuple[int, int, Token]]:
+    def find_all_tokens_of_types(
+        token_types: List["TokenType"], str_value: str
+    ) -> List[Tuple[int, int, Token]]:
         result = []
         for type_name in token_types:
             result.extend(TokenType.find_all_tokens_of_type(type_name, str_value))
@@ -183,7 +220,16 @@ PATTERNS_BY_LEVEL = [
 
 DELIMITERS = [Whitespace] + [ConstantType(x) for x in ".,;/!?@:"]
 BASIC_TYPES = [Uppercase, Lowercase, Digit, Whitespace, StartToken, EndToken]
-REGEX_TYPES = [Alphanum, Alphabet, Uppercase, Lowercase, Digit, Whitespace, StartToken, EndToken]
+REGEX_TYPES = [
+    Alphanum,
+    Alphabet,
+    Uppercase,
+    Lowercase,
+    Digit,
+    Whitespace,
+    StartToken,
+    EndToken,
+]
 
 ALL_TYPES = [
     Alnumspace,

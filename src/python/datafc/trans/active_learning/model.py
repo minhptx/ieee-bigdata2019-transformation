@@ -5,7 +5,6 @@ class ActiveLearner:
     def __init__(self, top_k_examples: List[List[Tuple[str, str]]]):
         self.top_k_examples = top_k_examples
 
-
     def choose_active_example(self):
         pass
 

@@ -15,7 +15,9 @@ class Operation(metaclass=ABCMeta):
         pass
 
     @staticmethod
-    def find_suitable_transformations(original_token: Token, target_token: Token) -> List["Operation"]:
+    def find_suitable_transformations(
+        original_token: Token, target_token: Token
+    ) -> List["Operation"]:
         transform_ops: List["Operation"] = []
         for Op in [Upper, Lower, Replace, PartialReplace, Constant, Substring]:
             transform_ops.extend(Op.generate(original_token, target_token))
@@ -23,7 +25,9 @@ class Operation(metaclass=ABCMeta):
 
 
 class Substring(Operation):
-    def __init__(self, original_token: Token, target_token: Token, start_index: int, length: int):
+    def __init__(
+        self, original_token: Token, target_token: Token, start_index: int, length: int
+    ):
         super(Substring, self).__init__(original_token, target_token)
         self.start_index: int = start_index
         self.length: int = length
@@ -50,16 +54,24 @@ class Substring(Operation):
     def transform(self) -> List[str]:
         if self.length == -1:
             return [x[self.start_index :] for x in self.original_token.values]
-        return [x[self.start_index : self.start_index + self.length] for x in self.original_token.values]
+        return [
+            x[self.start_index : self.start_index + self.length]
+            for x in self.original_token.values
+        ]
 
     @staticmethod
     def generate(original_token: Token, target_token: Token) -> List["Operation"]:
-        if target_token.token_type == StartToken or len(set([len(x) for x in target_token.values])) != 1:
+        if (
+            target_token.token_type == StartToken
+            or len(set([len(x) for x in target_token.values])) != 1
+        ):
             return []
 
         params_list = Substring.find_all_parameters(original_token, target_token)
 
-        return [Substring(original_token, target_token, x[0], x[1]) for x in params_list]
+        return [
+            Substring(original_token, target_token, x[0], x[1]) for x in params_list
+        ]
 
 
 class Upper(Operation):
@@ -105,7 +117,9 @@ class Lower(Operation):
 
 
 class PartialReplace(Operation):
-    def __init__(self, original_token: Token, target_token: Token, start_index: int, length: int):
+    def __init__(
+        self, original_token: Token, target_token: Token, start_index: int, length: int
+    ):
         self.start_index = start_index
         self.length = length
         super(PartialReplace, self).__init__(original_token, target_token)
@@ -131,20 +145,41 @@ class PartialReplace(Operation):
         params_list = []
 
         for i in range(target_min_length - original_length + 1):
-            if len(set([x[:i] + x[i + original_length :] for x in target_token.values])) == 1:
+            if (
+                len(
+                    set([x[:i] + x[i + original_length :] for x in target_token.values])
+                )
+                == 1
+            ):
                 params_list.append((i, original_length))
             if not is_same_length:
-                if len(set([x[: -i - original_length] + x[-i:] for x in target_token.values])) == 1:
+                if (
+                    len(
+                        set(
+                            [
+                                x[: -i - original_length] + x[-i:]
+                                for x in target_token.values
+                            ]
+                        )
+                    )
+                    == 1
+                ):
                     params_list.append((-i - original_length, original_length))
 
         return params_list
 
     @staticmethod
     def generate(original_token: Token, target_token: Token) -> List["Operation"]:
-        if target_token.token_type == StartToken or len(set([len(x) for x in original_token.values])) != 1:
+        if (
+            target_token.token_type == StartToken
+            or len(set([len(x) for x in original_token.values])) != 1
+        ):
             return []
         params_list = PartialReplace.find_all_parameters(original_token, target_token)
-        return [PartialReplace(original_token, target_token, x[0], x[1]) for x in params_list]
+        return [
+            PartialReplace(original_token, target_token, x[0], x[1])
+            for x in params_list
+        ]
 
 
 class Replace(Operation):
@@ -159,7 +194,10 @@ class Replace(Operation):
 
     @staticmethod
     def generate(original_token: Token, target_token: Token) -> List["Operation"]:
-        if target_token.token_type != StartToken and target_token.token_type == original_token.token_type:
+        if (
+            target_token.token_type != StartToken
+            and target_token.token_type == original_token.token_type
+        ):
             if (
                 len(
                     set([len(x) for x in target_token.values]).intersection(
@@ -180,7 +218,9 @@ class Constant(Operation):
         return f"Constant({self.target_token.values[0]})"
 
     def transform(self) -> List[str]:
-        return [self.target_token.values[0] for _ in range(len(self.original_token.values))]
+        return [
+            self.target_token.values[0] for _ in range(len(self.original_token.values))
+        ]
 
     @staticmethod
     def generate(original_token: Token, target_token: Token) -> List["Operation"]:

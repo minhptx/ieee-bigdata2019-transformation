@@ -32,7 +32,9 @@ class MultiClass(BaseClassifier[T]):
     def clear(self):
         self.labeled_data.clear()
 
-    def create_feature_vectors(self, labeled_cols1: List[Tuple[str, T]]) -> Tuple[List[List[float]], List[str]]:
+    def create_feature_vectors(
+        self, labeled_cols1: List[Tuple[str, T]]
+    ) -> Tuple[List[List[float]], List[str]]:
         vectors = []
         labels = []
         for label1, col1 in labeled_cols1:
@@ -46,12 +48,16 @@ class MultiClass(BaseClassifier[T]):
         self.model.fit(train_vectors, train_classes)
 
     def predict(self, labeled_cols: List[T]) -> List[str]:
-        train_vectors, _ = self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols])
+        train_vectors, _ = self.create_feature_vectors(
+            [(DUMMY_STR, labeled_col) for labeled_col in labeled_cols]
+        )
         train_vectors = self.vectorizer.transform(train_vectors)
         return max(self.model.predict_proba(train_vectors), key=lambda x: x[1])
 
     def predict_proba(self, labeled_cols: List[T]) -> List[Dict[str, float]]:
-        train_vectors, _ = self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols])
+        train_vectors, _ = self.create_feature_vectors(
+            [(DUMMY_STR, labeled_col) for labeled_col in labeled_cols]
+        )
         train_vectors = self.vectorizer.transform(train_vectors)
 
         labels = self.model.classes_

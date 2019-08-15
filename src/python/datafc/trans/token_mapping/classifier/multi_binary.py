@@ -13,7 +13,9 @@ DUMMY_STR = "|#$%^&"
 
 
 class MultiBinary(BaseClassifier[T]):
-    def __init__(self, sim_func: Optional[Callable[[T, T], List[float]]], method: str = "lr"):
+    def __init__(
+        self, sim_func: Optional[Callable[[T, T], List[float]]], method: str = "lr"
+    ):
         self.labeled_data: List[Tuple[str, T]] = []
         if method == "random_forest":
             self.model = RandomForestClassifier(n_estimators=10)
@@ -55,22 +57,32 @@ class MultiBinary(BaseClassifier[T]):
         return vectors, labels
 
     def train(self, labeled_cols: List[Tuple[str, T]]):
-        train_vectors, train_labels = self.create_feature_vectors(labeled_cols, labeled_cols)
+        train_vectors, train_labels = self.create_feature_vectors(
+            labeled_cols, labeled_cols
+        )
         self.model.fit(train_vectors, train_labels)
 
     def train_from_pairs(self, labeled_pairs: List[Tuple[T, T, bool]]):
-        train_vectors, train_labels = self.create_feature_vectors_from_pairs(labeled_pairs)
+        train_vectors, train_labels = self.create_feature_vectors_from_pairs(
+            labeled_pairs
+        )
         self.model.fit(train_vectors, train_labels)
 
     def predict(self, labeled_cols: List[T]) -> List[str]:
         train_vectors, _ = zip(
-            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data)
+            *self.create_feature_vectors(
+                [(DUMMY_STR, labeled_col) for labeled_col in labeled_cols],
+                self.labeled_data,
+            )
         )
         return max(self.model.predict_proba(train_vectors), key=lambda x: x[1])
 
     def predict_proba(self, labeled_cols: List[T]) -> List[Dict[str, float]]:
         train_vectors, _ = zip(
-            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data)
+            *self.create_feature_vectors(
+                [(DUMMY_STR, labeled_col) for labeled_col in labeled_cols],
+                self.labeled_data,
+            )
         )
 
         labels = [label for label, _ in self.labeled_data]
@@ -79,7 +91,9 @@ class MultiBinary(BaseClassifier[T]):
         return [dict(zip(labels, scores)) for scores in scores_list]
 
     def predict_similarity(self, original_col: T, target_col: T) -> float:
-        train_vectors, _ = self.create_feature_vectors([(DUMMY_STR, original_col)], [(DUMMY_STR, target_col)])
+        train_vectors, _ = self.create_feature_vectors(
+            [(DUMMY_STR, original_col)], [(DUMMY_STR, target_col)]
+        )
         return self.model.predict_proba(train_vectors)[0][1]
 
 
@@ -109,18 +123,26 @@ class MassMultiBinary(MultiBinary[T]):
         return self.mass_sim_func(labeled_pairs)
 
     def train_from_pairs(self, labeled_pairs: List[Tuple[T, T, bool]]):
-        train_vectors, train_labels = self.create_feature_vectors_from_pairs(labeled_pairs)
+        train_vectors, train_labels = self.create_feature_vectors_from_pairs(
+            labeled_pairs
+        )
         self.model.fit(train_vectors, train_labels)
 
     def predict(self, labeled_cols: List[T]) -> List[str]:
         train_vectors, _ = zip(
-            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data)
+            *self.create_feature_vectors(
+                [(DUMMY_STR, labeled_col) for labeled_col in labeled_cols],
+                self.labeled_data,
+            )
         )
         return max(self.model.predict_proba(train_vectors), key=lambda x: x[1])
 
     def predict_proba(self, labeled_cols: List[T]) -> List[Dict[str, float]]:
         train_vectors, _ = zip(
-            *self.create_feature_vectors([(DUMMY_STR, labeled_col) for labeled_col in labeled_cols], self.labeled_data)
+            *self.create_feature_vectors(
+                [(DUMMY_STR, labeled_col) for labeled_col in labeled_cols],
+                self.labeled_data,
+            )
         )
 
         labels = [label for label, _ in self.labeled_data]
@@ -129,5 +151,7 @@ class MassMultiBinary(MultiBinary[T]):
         return [dict(zip(labels, scores)) for scores in scores_list]
 
     def predict_similarity(self, original_col: T, target_col: T) -> float:
-        train_vectors, _ = self.create_feature_vectors([(DUMMY_STR, original_col)], [(DUMMY_STR, target_col)])
+        train_vectors, _ = self.create_feature_vectors(
+            [(DUMMY_STR, original_col)], [(DUMMY_STR, target_col)]
+        )
         return self.model.predict_proba(train_vectors)[0][1]
