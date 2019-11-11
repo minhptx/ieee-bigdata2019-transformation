@@ -16,7 +16,9 @@ def char_count(value):
 def type_count(value):
     type_to_count = defaultdict(lambda: 0)
     for basic_type in BASIC_TYPES:
-        type_to_count[f"TYPE COUNT f{basic_type.name}"] = len(re.findall(basic_type.regex, value))
+        type_to_count[f"TYPE COUNT f{basic_type.name}"] = len(
+            re.findall(basic_type.regex, value)
+        )
     return type_to_count
 
 

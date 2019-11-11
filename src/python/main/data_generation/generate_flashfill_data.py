@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 
 import sys
+
 print(sys.path)
 
 from datafc.utils.logging import setup_logging
@@ -22,11 +23,17 @@ for dataset in Path("data").iterdir():
         os.makedirs(Path("flashfill") / dataset.name / "input", exist_ok=True)
         os.makedirs(Path("flashfill") / dataset.name / "output", exist_ok=True)
 
-        input_data_path = Path("flashfill") / dataset.name / "input" / f"{sub_folder.name}.csv"
-        output_data_path = Path("flashfill") / dataset.name / "output" / f"{sub_folder.name}.csv"
+        input_data_path = (
+            Path("flashfill") / dataset.name / "input" / f"{sub_folder.name}.csv"
+        )
+        output_data_path = (
+            Path("flashfill") / dataset.name / "output" / f"{sub_folder.name}.csv"
+        )
 
         input_values = input_file.open("r", encoding="utf-8").readlines()[:1000]
-        groundtruth_values = groundtruth_file.open("r", encoding="utf-8").readlines()[:1000]
+        groundtruth_values = groundtruth_file.open("r", encoding="utf-8").readlines()[
+            :1000
+        ]
 
         example_size = len(input_values) // 2
 
@@ -36,14 +43,18 @@ for dataset in Path("data").iterdir():
             with output_data_path.open("w", encoding="utf-8") as output_writer:
                 for index in range(len(input_values)):
                     input_values[index] = input_values[index].replace('"', "")
-                    groundtruth_values[index] = groundtruth_values[index].replace('"', "")
+                    groundtruth_values[index] = groundtruth_values[index].replace(
+                        '"', ""
+                    )
                     if index in sampled_indices:
                         if input_values[index].strip():
                             input_writer.write(
                                 f'"{input_values[index].strip()}","{groundtruth_values[index].strip()}"\n'
                             )
                         else:
-                            input_writer.write(f'"empty","{groundtruth_values[index].strip()}"\n')
+                            input_writer.write(
+                                f'"empty","{groundtruth_values[index].strip()}"\n'
+                            )
                     else:
                         input_writer.write(f'"{input_values[index].strip()}",""\n')
 

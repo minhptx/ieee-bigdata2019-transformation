@@ -9,8 +9,12 @@ from datafc.syn.token import Token
 from datafc.trans.operators import Operation, Constant
 from datafc.trans.token_mapping import TokenMappingBaseModel
 from datafc.trans.token_mapping.classifier import MultiBinary, MassMultiBinary
-from datafc.trans.token_mapping.feature.column_sim import values_jaccard, syntactic_sim, text_cosine, \
-    semantic_sim
+from datafc.trans.token_mapping.feature.column_sim import (
+    values_jaccard,
+    syntactic_sim,
+    text_cosine,
+    semantic_sim,
+)
 
 logger = logging.getLogger("myapp")
 
@@ -41,13 +45,20 @@ class TokenSimMappingModel(TokenMappingBaseModel):
             return 1.0
         transformed_column = Column(values=operation.transform())
         target_column = Column(values=operation.target_token.values)
-        result = self.scoring_model.predict_similarity(transformed_column, target_column)
+        result = self.scoring_model.predict_similarity(
+            transformed_column, target_column
+        )
         return result
 
     def generate_candidate_functions(self, source_token: Token, target_token: Token):
-        operation_candidates = Operation.find_suitable_transformations(source_token, target_token)
+        operation_candidates = Operation.find_suitable_transformations(
+            source_token, target_token
+        )
         if operation_candidates:
-            return max({op: self.score_operation(op) for op in operation_candidates}.items(), key=lambda x: x[1])
+            return max(
+                {op: self.score_operation(op) for op in operation_candidates}.items(),
+                key=lambda x: x[1],
+            )
         return None, 0.0
 
     def train_scoring_model(self, example_patterns_by_groups: List[List[Pattern]]):
@@ -92,13 +103,20 @@ class MassTokenSimMappingModel(TokenSimMappingModel):
             return 1.0
         transformed_column = Column(values=operation.transform())
         target_column = Column(values=operation.target_token.values)
-        result = self.scoring_model.predict_similarity(transformed_column, target_column)
+        result = self.scoring_model.predict_similarity(
+            transformed_column, target_column
+        )
         return result
 
     def generate_candidate_functions(self, source_token: Token, target_token: Token):
-        operation_candidates = Operation.find_suitable_transformations(source_token, target_token)
+        operation_candidates = Operation.find_suitable_transformations(
+            source_token, target_token
+        )
         if operation_candidates:
-            return max({op: self.score_operation(op) for op in operation_candidates}.items(), key=lambda x: x[1])
+            return max(
+                {op: self.score_operation(op) for op in operation_candidates}.items(),
+                key=lambda x: x[1],
+            )
         return None, 0.0
 
     def train_scoring_model(self, example_patterns_by_groups: List[List[Pattern]]):
