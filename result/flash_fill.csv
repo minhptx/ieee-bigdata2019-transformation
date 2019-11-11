@@ -1,0 +1,2 @@
+,name,num_scenarios,num_correct,macro_mean_acc,macro_top_k_acc,example_valid_p,example_valid_r,example_valid_f1,mean_running_time,s_valid_p,s_valid_r,s_valid_f1,valid_accuracy
+0,museum,173,129,0.9071163930868463,0.9071163930868463,0.09288360691315374,1.0,0.1121312023915775,2.911451032395997,1,1,1.0,1.0

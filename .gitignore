@@ -1,6 +1,9 @@
 .idea/
+.vscode/
 debug/
 **/__pycache__/**
 *.log
 backup/
 log/
+conf/logging.yaml
+**/.ipynb_checkpoints/**
