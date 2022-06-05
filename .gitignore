@@ -6,4 +6,5 @@ debug/
 backup/
 log/
 conf/logging.yaml
+data/**
 **/.ipynb_checkpoints/**
